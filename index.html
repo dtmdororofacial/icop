@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ferramenta de apoio à decisão clínica baseada no algoritmo da Classificação Internacional de Dor Orofacial (ICOP-AL).">
+  <meta name="color-scheme" content="light">
+  <title>ICOP-AL · Apoio à decisão em dor orofacial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="app-header">
+    <div class="container app-header__inner">
+      <div class="app-header__title">
+        <span class="app-header__mark">ICOP-AL</span>
+        <span class="app-header__sub">Apoio à decisão · dor orofacial</span>
+      </div>
+      <button type="button" id="btn-reiniciar" class="btn btn--ghost">Reiniciar</button>
+    </div>
+  </header>
+
+  <main id="conteudo" class="app-main">
+    <div class="container">
+
+      <!-- Indicador de progresso / ramo -->
+      <section class="progress" aria-label="Progresso">
+        <div class="progress__meta">
+          <span class="branch-chip" id="branch-chip">1. Dor odontogênica</span>
+          <span class="progress__count" id="progress-count">Pergunta 3</span>
+        </div>
+        <div class="progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35">
+          <div class="progress__fill" id="progress-fill" style="width: 35%;"></div>
+        </div>
+      </section>
+
+      <!-- ========== TELA: PERGUNTA ========== -->
+      <!-- Conteúdo ilustrativo; será preenchido dinamicamente pelo script.js na próxima etapa. -->
+      <section class="card card--question" id="card-pergunta" aria-live="polite">
+        <p class="card__kicker">Pergunta clínica</p>
+        <h1 class="question__text" id="question-text">Há dor em algum dente?</h1>
+        <p class="question__help" id="question-help">A dor pode irradiar e/ou referir-se a outros locais orofaciais ipsilaterais.</p>
+
+        <div class="options" id="options">
+          <button type="button" class="option">
+            <span class="option__label">Sim</span>
+            <span class="option__chevron" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="option">
+            <span class="option__label">Não</span>
+            <span class="option__chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ========== TELA: AVISO / RED FLAGS ========== -->
+      <section class="card card--notice" id="card-aviso" hidden>
+        <p class="card__kicker card__kicker--warn">Atenção</p>
+        <h1 class="notice__text" id="notice-text">Atenção aos sinais de alerta (red flags) antes de prosseguir.</h1>
+        <ul class="notice__list" id="notice-list">
+          <li>Exemplo de sinal de alerta a ser exibido dinamicamente.</li>
+        </ul>
+        <div class="options">
+          <button type="button" class="option option--continue">
+            <span class="option__label">Entendi, continuar</span>
+            <span class="option__chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ========== TELA: RESULTADO ========== -->
+      <section class="card card--result" id="card-resultado" hidden>
+        <div class="result__top">
+          <span class="result__code" id="result-code">ICOP 1.1.1</span>
+          <span class="result__cat" id="result-cat">1. Dor odontogênica</span>
+        </div>
+        <h1 class="result__name" id="result-name">Dor pulpar</h1>
+
+        <h2 class="result__subtitle">Critérios diagnósticos (resumo)</h2>
+        <ul class="result__criteria" id="result-criteria">
+          <li>Critério ilustrativo 1.</li>
+          <li>Critério ilustrativo 2.</li>
+          <li>Critério ilustrativo 3.</li>
+        </ul>
+
+        <div class="result__actions">
+          <button type="button" id="btn-copiar" class="btn btn--primary">Copiar resultado</button>
+          <span class="result__copied" id="result-copied" hidden role="status">Copiado ✓</span>
+        </div>
+      </section>
+
+      <!-- Navegação inferior -->
+      <nav class="nav" aria-label="Navegação da avaliação">
+        <button type="button" id="btn-voltar" class="btn btn--secondary">
+          <span aria-hidden="true">←</span> Voltar
+        </button>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="disclaimer">
+    <div class="container">
+      <p>
+        <strong>Ferramenta de apoio à decisão clínica.</strong>
+        Não substitui o julgamento clínico nem a anamnese e o exame completos.
+        Baseada na Classificação Internacional de Dor Orofacial (ICOP), 1ª edição.
+      </p>
+      <p class="disclaimer__credit">
+        Site feito por Profa. Dra. Juliana Stuginski Barbosa ·
+        <a class="disclaimer__handle" href="https://instagram.com/dtmdororofacial" target="_blank" rel="noopener noreferrer">@dtmdororofacial</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- O script.js será adicionado na próxima etapa (lógica de navegação). -->
+</body>
+</html>

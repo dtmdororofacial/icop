@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "titulo": "ICOP-AL — Tronco decisório inicial",
+    "subtitulo": "Apoio à decisão diagnóstica em dor orofacial (Classificação Internacional de Dor Orofacial, 1ª edição)",
+    "versao": "0.1-tronco",
+    "escopo": "Tronco decisório inicial (initial decision trunk) do ICOP-AL: 6 categorias até o 2º/3º dígito. Não contempla os subtipos de 4º a 7º dígito.",
+    "fonte_algoritmo": "Shakeri H, et al. Development and validation of the International Classification for Orofacial Pain Algorithm (ICOP-AL). PAIN 167 (2026) e1–e7 e material suplementar.",
+    "fonte_classificacao": "Classificação Internacional de Dor Orofacial, Primeira Edição (ICOP) — tradução PT-BR. Conti PCR et al., Headache Medicine 2022;13(1):3-97.",
+    "nota_modelagem": "Alguns ramos paralelos do fluxograma (ex.: músculo vs. articulação; trigêmeo vs. glossofaríngeo) foram linearizados em perguntas sequenciais para a navegação clique a clique, preservando os critérios diagnósticos. Nomenclatura e critérios em PT-BR conforme a tradução oficial.",
+    "no_inicial": "q_origem"
+  },
+  "nos": {
+    "q_origem": {
+      "tipo": "pergunta",
+      "ramo": "Triagem inicial",
+      "texto": "A dor se origina na região orofacial?",
+      "ajuda": "Considere a queixa principal do paciente. Esta ferramenta cobre apenas dores cuja origem é a região orofacial.",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "info_red_flags" },
+        { "rotulo": "Não", "proximo": "r_sem_dor" }
+      ]
+    },
+
+    "info_red_flags": {
+      "tipo": "aviso",
+      "ramo": "Triagem inicial",
+      "texto": "Atenção aos sinais de alerta (red flags) que podem indicar doença grave ou maligna antes de prosseguir.",
+      "detalhes": [
+        "Neuropatia focal espontânea com dor e/ou alteração de sensibilidade (pode indicar invasão tumoral do nervo).",
+        "Dor no ângulo da mandíbula desencadeada por esforço e aliviada pelo repouso (pode indicar isquemia cardíaca).",
+        "Paciente > 50 anos com história de carcinoma, cefaleia progressiva localizada, edema ou ausência de pulso na artéria temporal superficial.",
+        "Claudicação mandibular, sintomas visuais, artérias temporais dolorosas à palpação (pode indicar arterite temporal).",
+        "Sintomas sistêmicos: febre, perda de peso, anorexia, mal-estar, mialgia, calafrios, sudorese.",
+        "Cefaleia de início recente no adulto, de intensidade crescente, com náusea/vômito, ocorrência noturna, piora postural, confusão, convulsões ou sinais neurológicos (efeito de massa intracraniano).",
+        "Otalgia, trismo, alteração de sensibilidade na distribuição do ramo mandibular (impacção em fossa infratemporal ou nervo acústico).",
+        "Neuralgia do trigêmeo em pessoa < 50 anos (pode sugerir esclerose múltipla)."
+      ],
+      "proximo": "q_dente"
+    },
+
+    "q_dente": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Há dor em algum dente?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_pulpar_evidencia" },
+        { "rotulo": "Não", "proximo": "q_gengiva" }
+      ]
+    },
+
+    "q_pulpar_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Há evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir DOR PULPAR?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_pulpar_criterio" },
+        { "rotulo": "Não", "proximo": "q_periodontal_evidencia" }
+      ]
+    },
+    "q_pulpar_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "A dor está localizada no local da lesão E há ≥1 de: (a) relação temporal entre a dor e o surgimento da lesão/início da doença/trauma; (b) exacerbação por estímulo físico (mecânico, térmico ou químico) aplicado ao dente afetado?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_1_1" },
+        { "rotulo": "Não", "proximo": "q_periodontal_evidencia" }
+      ]
+    },
+
+    "q_periodontal_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Há evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir DOR PERIODONTAL?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_periodontal_criterio" },
+        { "rotulo": "Não", "proximo": "q_gengiva" }
+      ]
+    },
+    "q_periodontal_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "A dor está localizada no local da lesão E é exacerbada por estímulo físico aplicado ao dente afetado (horizontal ou verticalmente) ou ao tecido sobre a raiz?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_1_2" },
+        { "rotulo": "Não", "proximo": "q_gengiva" }
+      ]
+    },
+
+    "q_gengiva": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Há dor na gengiva?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_gengiva_evidencia" },
+        { "rotulo": "Não", "proximo": "q_mucosa" }
+      ]
+    },
+    "q_gengiva_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Há evidência de lesão ou distúrbio dos tecidos gengivais capaz de causar dor?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_gengiva_criterio" },
+        { "rotulo": "Não", "proximo": "q_mucosa" }
+      ]
+    },
+    "q_gengiva_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica / dentoalveolar",
+      "texto": "Estão presentes ≥2 de: (1) dor localizada no local da lesão/distúrbio; (2) relação temporal entre dor e surgimento da lesão; (3) exacerbação por manipulação do tecido gengival afetado?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_1_3" },
+        { "rotulo": "Não", "proximo": "q_mucosa" }
+      ]
+    },
+
+    "q_mucosa": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há dor na mucosa oral?",
+      "ajuda": "A dor pode irradiar e/ou referir-se a outros locais orofaciais ipsilaterais.",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_mucosa_evidencia" },
+        { "rotulo": "Não", "proximo": "q_salivar" }
+      ]
+    },
+    "q_mucosa_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há evidência de lesão ou distúrbio dos tecidos da mucosa oral capaz de causar dor?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_mucosa_criterio" },
+        { "rotulo": "Não", "proximo": "q_salivar" }
+      ]
+    },
+    "q_mucosa_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Estão presentes TODOS os três: (1) dor localizada no local da lesão; (2) relação temporal entre dor e surgimento da lesão; (3) exacerbação por manipulação da mucosa oral afetada?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_2_1" },
+        { "rotulo": "Não", "proximo": "q_salivar" }
+      ]
+    },
+
+    "q_salivar": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há dor nas glândulas salivares?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_salivar_evidencia" },
+        { "rotulo": "Não", "proximo": "q_osso" }
+      ]
+    },
+    "q_salivar_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há evidência de lesão ou distúrbio das glândulas salivares capaz de causar dor?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_salivar_criterio" },
+        { "rotulo": "Não", "proximo": "q_osso" }
+      ]
+    },
+    "q_salivar_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "A dor está localizada no local da lesão E há ≥1 de: (a) relação temporal entre dor e surgimento da lesão; (b) exacerbação por pressão sobre a glândula salivar afetada?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_2_2" },
+        { "rotulo": "Não", "proximo": "q_osso" }
+      ]
+    },
+
+    "q_osso": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há dor no osso maxilar/mandibular?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_osso_evidencia" },
+        { "rotulo": "Não", "proximo": "q_mastig" }
+      ]
+    },
+    "q_osso_evidencia": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Há evidência de lesão ou distúrbio do osso capaz de causar dor?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_osso_criterio" },
+        { "rotulo": "Não", "proximo": "q_mastig" }
+      ]
+    },
+    "q_osso_criterio": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "A dor está localizada no local da lesão óssea E há ≥1 de: (a) relação temporal entre dor e surgimento da lesão óssea; (b) exacerbação por pressão sobre a lesão óssea?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_1_2_3" },
+        { "rotulo": "Não", "proximo": "q_mastig" }
+      ]
+    },
+
+    "q_mastig": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "Há dor na mandíbula, têmpora, orelha e/ou à frente da orelha?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_mastig_modificada" },
+        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+      ]
+    },
+    "q_mastig_modificada": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "A dor é modificada (aumenta ou diminui) pelo movimento, função ou parafunção mandibular (ex.: ranger ou apertar os dentes)?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_musculo_ou_atm" },
+        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+      ]
+    },
+    "q_musculo_ou_atm": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "Onde a dor é confirmada ao exame?",
+      "ajuda": "Distinção entre dor de origem muscular (dor miofascial) e dor de origem articular (ATM).",
+      "opcoes": [
+        { "rotulo": "Músculo (temporal e/ou masseter), provocada por palpação muscular e/ou abertura bucal", "proximo": "q_miofascial_secundaria" },
+        { "rotulo": "Articulação temporomandibular (ATM), confirmada ao exame", "proximo": "q_atm_confirmacao" },
+        { "rotulo": "Nenhuma das anteriores", "proximo": "q_nervo_paroxismo" }
+      ]
+    },
+    "q_miofascial_secundaria": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "Foi diagnosticada uma disfunção subjacente capaz de causar a dor miofascial (tendinite, miosite ou espasmo muscular), com evidência de causalidade?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_2_2" },
+        { "rotulo": "Não", "proximo": "r_2_1" }
+      ]
+    },
+    "q_atm_confirmacao": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "A dor está localizada na área da ATM (confirmada ao exame), provocada por palpação do polo lateral do côndilo e/ou por abertura máxima, movimentos laterais e/ou protrusão, e modificada pela função mandibular?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_atm_secundaria" },
+        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+      ]
+    },
+    "q_atm_secundaria": {
+      "tipo": "pergunta",
+      "ramo": "2-3. Dor miofascial e na ATM",
+      "texto": "Foi diagnosticado um distúrbio subjacente capaz de causar dor na ATM (artrite, deslocamento de disco, doença articular degenerativa ou subluxação), com evidência de causalidade?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_3_2" },
+        { "rotulo": "Não", "proximo": "r_3_1" }
+      ]
+    },
+
+    "q_nervo_paroxismo": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão/doença dos nervos cranianos",
+      "texto": "A dor está relacionada à distribuição do nervo trigêmeo ou do nervo glossofaríngeo?",
+      "ajuda": "Glossofaríngeo: parte posterior da língua, fossa tonsilar, faringe, abaixo do ângulo da mandíbula e/ou orelha.",
+      "opcoes": [
+        { "rotulo": "Trigêmeo", "proximo": "q_trigemeo_neuralgia" },
+        { "rotulo": "Glossofaríngeo", "proximo": "q_glosso_neuralgia" },
+        { "rotulo": "Nenhum dos dois", "proximo": "info_cat5" }
+      ]
+    },
+    "q_trigemeo_neuralgia": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão/doença dos nervos cranianos",
+      "texto": "As crises têm TODAS: duração de fração de segundo a 2 min, intensidade forte e qualidade tipo choque elétrico/fisgada/facada/aguda, E são desencadeadas por estímulos inócuos na distribuição do trigêmeo?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_4_1_1" },
+        { "rotulo": "Não", "proximo": "q_trigemeo_neuropatica" }
+      ]
+    },
+    "q_trigemeo_neuropatica": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão/doença dos nervos cranianos",
+      "texto": "A dor é contínua ou quase contínua (queimação, aperto, dolorimento ou alfinetadas/agulhadas), dentro da distribuição do trigêmeo, com alterações somatossensoriais clinicamente detectáveis?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_4_1_2" },
+        { "rotulo": "Não", "proximo": "info_cat5" }
+      ]
+    },
+    "q_glosso_neuralgia": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão/doença dos nervos cranianos",
+      "texto": "As crises têm TODAS: duração de segundos a 2 min, intensidade grave, qualidade tipo choque elétrico/tiro/punhalada/cortante, E são precipitadas por engolir, tossir, falar ou bocejar?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_4_2_1" },
+        { "rotulo": "Não", "proximo": "q_glosso_neuropatica" }
+      ]
+    },
+    "q_glosso_neuropatica": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão/doença dos nervos cranianos",
+      "texto": "A dor é contínua ou quase contínua na distribuição do glossofaríngeo (frequentemente também na orelha ipsilateral), descrita como queimação/aperto ou alfinetadas/agulhadas?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_4_2_2" },
+        { "rotulo": "Não", "proximo": "info_cat5" }
+      ]
+    },
+
+    "info_cat5": {
+      "tipo": "aviso",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Avaliar dores orofaciais que se assemelham a apresentações de cefaleias primárias (categoria 5). Importante: se a dor for acompanhada de dor de cabeça, classifique pela ICHD-3, não pela ICOP.",
+      "proximo": "q_migranea"
+    },
+    "q_migranea": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Há ≥5 crises de dor facial e/ou oral, SEM dor de cabeça, durando 4–72 h, com ≥2 de (unilateral, pulsátil, intensidade moderada/forte, agravada por atividade física) E acompanhadas por náusea/vômito ou fotofobia+fonofobia?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "q_migranea_cronica" },
+        { "rotulo": "Não", "proximo": "q_tensional" }
+      ]
+    },
+    "q_migranea_cronica": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "A dor ocorre em ≥15 dias/mês por >3 meses, sendo migranosa em ≥8 dias/mês (ou interpretada como migrânea no início e aliviada por triptano/ergotamínico)?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_1_2" },
+        { "rotulo": "Não", "proximo": "r_5_1_1" }
+      ]
+    },
+    "q_tensional": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "A dor orofacial, sem dor de cabeça, tem ≥2 de (bilateral, em pressão/aperto não pulsátil, intensidade leve/moderada, não agravada por atividade física rotineira), SEM náusea/vômito e no máximo um entre fotofobia ou fonofobia?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_2" },
+        { "rotulo": "Não", "proximo": "q_salvas" }
+      ]
+    },
+    "q_salvas": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Há ≥5 crises de dor forte unilateral, facial e/ou oral, durando 15–180 min, com ≥1 sintoma autonômico ipsilateral e/ou inquietude, ocorrendo de uma a cada dois dias até oito por dia?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_3_1" },
+        { "rotulo": "Não", "proximo": "q_hemifacial" }
+      ]
+    },
+    "q_hemifacial": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Há ≥20 crises de dor forte unilateral, facial e/ou oral, durando 2–30 min, com frequência >5/dia, com ≥1 sintoma autonômico ipsilateral e/ou prevenção absoluta por indometacina?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_3_2" },
+        { "rotulo": "Não", "proximo": "q_sunfa" }
+      ]
+    },
+    "q_sunfa": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Há ≥20 crises de dor facial e/ou oral unilateral, moderada/forte, durando 1–600 s (facadas únicas, séries ou em 'dente de serra'), com ≥1 sinal autonômico craniofacial ipsilateral, ao menos uma por dia?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_3_3" },
+        { "rotulo": "Não", "proximo": "q_neurovascular" }
+      ]
+    },
+    "q_neurovascular": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Há ≥5 crises de dor intraoral unilateral, de duração variável, intensidade moderada/forte, semelhante a dor de dente e/ou pulsátil, acompanhada de ≥1 sintoma autonômico/migranoso, com exames clínico e radiográfico normais?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_5_4" },
+        { "rotulo": "Não", "proximo": "info_cat6" }
+      ]
+    },
+
+    "info_cat6": {
+      "tipo": "aviso",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Avaliar dor orofacial idiopática (categoria 6): condições sem causa local/sistêmica identificável após exclusão.",
+      "proximo": "q_sab"
+    },
+    "q_sab": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Há sensação de queimação na superfície da mucosa oral, recorrente diária, por >2 h/dia, por >3 meses, com mucosa de aparência normal e causas locais/sistêmicas excluídas?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_6_1" },
+        { "rotulo": "Não", "proximo": "q_pidp" }
+      ]
+    },
+    "q_pidp": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "A dor está localizada em região dentoalveolar (dente ou osso alveolar), unilateral, recorrente diária por >2 h/dia por >3 meses, de qualidade profunda/maçante/em pressão, com exames clínico e radiográfico normais e causas locais excluídas?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_6_3" },
+        { "rotulo": "Não", "proximo": "q_cufpa" }
+      ]
+    },
+    "q_cufpa": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Há dor facial estritamente unilateral e constante (leve a moderada, por >3 meses) COM episódios de exacerbação em crises (até 6×/dia, mesma localização, moderada/severa, 10–30 min), com exames normais e sem sinais autonômicos/migranosos?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_6_4" },
+        { "rotulo": "Não", "proximo": "q_pifp" }
+      ]
+    },
+    "q_pifp": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Há dor facial recorrente diária por >2 h/dia por >3 meses, de localização imprecisa (não seguindo um nervo periférico), qualidade maçante/dolorida/irritante, com exames clínico e radiográfico normais e causas locais excluídas?",
+      "opcoes": [
+        { "rotulo": "Sim", "proximo": "r_6_2" },
+        { "rotulo": "Não", "proximo": "r_nao_classificada" }
+      ]
+    },
+
+    "r_sem_dor": {
+      "tipo": "resultado",
+      "diagnostico": false,
+      "codigo": "—",
+      "nome": "Sem dor orofacial",
+      "categoria": "Triagem inicial",
+      "criterios": [
+        "A dor não se origina na região orofacial.",
+        "Considere encaminhamento conforme a origem provável da dor (ex.: cefaleia primária, dor cervical, causas sistêmicas)."
+      ]
+    },
+    "r_nao_classificada": {
+      "tipo": "resultado",
+      "diagnostico": false,
+      "codigo": "—",
+      "nome": "Dor orofacial não classificada neste tronco",
+      "categoria": "Resultado inconclusivo",
+      "criterios": [
+        "A dor não preencheu os critérios de nenhuma categoria do tronco decisório inicial.",
+        "Considere 'Outra dor orofacial especificada' ou 'Dor orofacial não especificada' (ICOP), reavaliação clínica e/ou os níveis mais específicos (4º–7º dígito) da ICOP, fora do escopo desta versão."
+      ]
+    },
+
+    "r_1_1_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.1", "nome": "Dor pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Dor em um dente.",
+        "Evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir dor pulpar.",
+        "Dor localizada no local da lesão e ≥1 de: (a) relação temporal com a lesão/doença/trauma; (b) exacerbação por estímulo físico (mecânico, térmico ou químico) ao dente afetado.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.2", "nome": "Dor periodontal",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Evidência de lesão, doença ou trauma capaz de produzir dor periodontal.",
+        "Dor localizada no local da lesão.",
+        "Dor exacerbada por estímulo físico aplicado ao dente afetado (horizontal ou verticalmente) ou ao tecido sobre a raiz.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.3", "nome": "Dor gengival",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Dor na gengiva com evidência de lesão ou distúrbio dos tecidos gengivais capaz de causar dor.",
+        "≥2 de: (1) dor localizada no local da lesão; (2) relação temporal com o surgimento da lesão; (3) exacerbação por manipulação do tecido gengival afetado.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.1", "nome": "Dor na mucosa oral",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Dor na mucosa oral com evidência de lesão ou distúrbio da mucosa capaz de causar dor.",
+        "Todos os três: (1) dor localizada no local da lesão; (2) relação temporal com o surgimento da lesão; (3) exacerbação por manipulação da mucosa oral afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.2", "nome": "Dor nas glândulas salivares",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Dor nas glândulas salivares com evidência de lesão ou distúrbio das glândulas capaz de causar dor.",
+        "Dor localizada no local da lesão.",
+        "≥1 de: (a) relação temporal com o surgimento da lesão; (b) exacerbação por pressão sobre a glândula salivar afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.3", "nome": "Dor óssea mandibular",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Dor no osso maxilar/mandibular com evidência de lesão ou distúrbio ósseo capaz de causar dor.",
+        "Dor localizada no local da lesão óssea.",
+        "≥1 de: (a) relação temporal com o surgimento da lesão óssea; (b) exacerbação por pressão sobre a lesão óssea.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "2.1", "nome": "Dor miofascial orofacial primária",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Dor nos músculos mastigatórios, sem distúrbio causal identificado.",
+        "Relatada na mandíbula, têmpora, orelha e/ou à frente da orelha, com confirmação ao exame no músculo temporal e/ou masseter e provocada por palpação desses músculos e/ou pela abertura bucal máxima.",
+        "Modificada (aumenta ou diminui) pelo movimento, função ou parafunção mandibular.",
+        "Ocorrendo em um ou mais episódios ou de forma contínua.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "2.2", "nome": "Dor miofascial orofacial secundária",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Dor miofascial em músculo mastigatório, confirmada ao exame e provocada por palpação e/ou abertura bucal.",
+        "Diagnóstico de disfunção subjacente capaz de causar a dor miofascial (tendinite, miosite ou espasmo muscular).",
+        "Evidência de causalidade demonstrada por ≥2: relação temporal com a disfunção; piora paralela à progressão; melhora paralela à resolução.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "3.1", "nome": "Dor primária na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor na e/ou à frente da(s) orelha(s), sem distúrbio causal conhecido.",
+        "Confirmação ao exame da localização na área da(s) ATM(s); provocada por palpação do polo lateral do côndilo e/ou por abertura máxima, movimentos laterais e/ou protrusão.",
+        "Modificada pelo movimento, função ou parafunção mandibular.",
+        "Ocorrendo em um ou mais episódios ou de forma contínua.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "3.2", "nome": "Dor secundária na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor na ATM, confirmada ao exame e provocada por palpação e/ou movimentos mandibulares.",
+        "Diagnóstico de distúrbio subjacente capaz de causar dor na ATM (artrite, deslocamento de disco, doença articular degenerativa ou subluxação).",
+        "Evidência de causalidade demonstrada por ≥2: relação temporal; piora paralela à progressão; melhora paralela à resolução do distúrbio.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_4_1_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "4.1.1", "nome": "Neuralgia do trigêmeo",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dores faciais paroxísticas recorrentes, unilaterais, na distribuição de uma ou mais divisões do trigêmeo.",
+        "A dor tem todas: duração de fração de segundo a 2 min; intensidade forte; qualidade tipo choque elétrico, fisgada, facada ou aguda.",
+        "Desencadeada por estímulos inócuos na distribuição do trigêmeo afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "4.1.2", "nome": "Outra dor neuropática do trigêmeo",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor na distribuição de um ou mais ramos do trigêmeo, indicativa de dano neural.",
+        "Dor geralmente contínua ou quase contínua (queimação, aperto, dolorimento ou alfinetadas/agulhadas); paroxismos breves podem sobrepor-se, mas não predominam.",
+        "Alterações somatossensoriais clinicamente detectáveis na distribuição do trigêmeo (alodinia mecânica, hiperalgesia/alodinia ao frio comuns).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_2_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "4.2.1", "nome": "Neuralgia do glossofaríngeo",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Ataques paroxísticos recorrentes de dor unilateral na distribuição do glossofaríngeo (parte posterior da língua, fossa tonsilar, faringe, ângulo da mandíbula e/ou orelha).",
+        "A dor tem todas: duração de segundos a 2 min; intensidade grave; qualidade tipo choque elétrico, tiro, punhalada ou cortante; precipitada por engolir, tossir, falar ou bocejar.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_2_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "4.2.2", "nome": "Dor neuropática glossofaríngea",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor na distribuição do glossofaríngeo, frequentemente percebida também na orelha ipsilateral.",
+        "Dor geralmente contínua ou quase contínua (queimação ou aperto, ou alfinetadas/agulhadas); paroxismos breves podem sobrepor-se, mas não predominam.",
+        "Podem estar presentes déficits sensoriais na parte posterior da língua e fossa tonsilar; reflexo do vômito fraco ou ausente.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_1_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.1.1", "nome": "Migrânea orofacial episódica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "≥5 crises de dor facial e/ou oral, sem dor de cabeça, com duração de 4–72 h (não tratada ou tratada sem sucesso).",
+        "≥2 de: localização unilateral; caráter pulsátil; intensidade moderada ou forte; exacerbada por (ou levando a evitar) atividade física rotineira.",
+        "Acompanhada por ≥1 de: náusea e/ou vômito; fotofobia e fonofobia.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_1_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.1.2", "nome": "Migrânea orofacial crônica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Dor facial e/ou oral, sem dor de cabeça, em ≥15 dias/mês por >3 meses.",
+        "Ao menos cinco crises preenchendo os critérios de 5.1.1 Migrânea orofacial episódica.",
+        "Em ≥8 dias/mês por >3 meses preenche critérios de migrânea (C e D de 5.1.1) ou é interpretada como migrânea no início e aliviada por triptano/ergotamínico.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.2", "nome": "Dor orofacial do tipo tensão",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Dor episódica ou crônica exclusivamente na região orofacial, sem dor de cabeça.",
+        "Associada a ≥2 de: localização bilateral; qualidade em pressão/aperto (não pulsátil); intensidade leve ou moderada; não agravada por atividade física rotineira.",
+        "Sem náusea/vômito; no máximo um entre fotofobia ou fonofobia.",
+        "Mesmas características da Cefaleia do tipo tensão (ICHD-3). Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.1", "nome": "Crise de dor orofacial em salvas",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "≥5 crises de dor forte/muito forte, unilateral, facial e/ou oral, sem dor de cabeça, durando 15–180 min.",
+        "≥1 sintoma autonômico ipsilateral (injeção conjuntival/lacrimejamento, congestão nasal/rinorreia, edema palpebral, sudorese frontal/facial, miose/ptose) e/ou sensação de inquietude/agitação.",
+        "Frequência entre uma a cada dois dias e oito por dia.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.2", "nome": "Dor paroxística hemifacial",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "≥20 crises de dor forte, unilateral, facial e/ou oral, sem dor de cabeça, durando 2–30 min.",
+        "≥1 sintoma autonômico ipsilateral e/ou prevenção absoluta por doses terapêuticas de indometacina.",
+        "Frequência >5 por dia.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_3": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.3", "nome": "Crises de dor facial neuralgiforme, unilateral, de curta duração, com sintomas autonômicos cranianos (SUNFA)",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "≥20 crises de dor facial e/ou oral unilateral, moderada/forte, sem dor de cabeça, durando 1–600 s (facadas únicas, séries ou em padrão de 'dente de serra').",
+        "≥1 sinal/sintoma autonômico craniofacial ipsilateral.",
+        "Frequência de ao menos uma por dia.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_4": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "5.4", "nome": "Dor orofacial neurovascular",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "≥5 crises de dor intraoral unilateral, de duração variável, sem dor de cabeça.",
+        "Dor com intensidade moderada ou forte e qualidade semelhante a dor de dente e/ou pulsátil.",
+        "Acompanhada por ≥1 de: lacrimejamento/injeção conjuntival; rinorreia/congestão nasal; edema de bochecha; fotofobia/fonofobia; náusea/vômito.",
+        "Sem causa local; exames clínico e radiográfico normais. Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_1": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "6.1", "nome": "Síndrome da ardência bucal (SAB)",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Dor oral recorrente diária, sentida por >2 h/dia, por >3 meses.",
+        "Qualidade de queimação, sentida na superfície da mucosa oral.",
+        "Mucosa oral com aparência normal; fatores causais locais e sistêmicos excluídos.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3. (Testes sensoriais distinguem 6.1.1 e 6.1.2.)"
+      ]
+    },
+    "r_6_2": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "6.2", "nome": "Dor facial idiopática persistente (DFIP)",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Dor facial recorrendo diariamente por >2 h/dia, por >3 meses.",
+        "Localização imprecisa, não seguindo a distribuição de um nervo periférico; qualidade maçante, dolorida ou irritante.",
+        "Exames clínico e radiográfico normais; causas locais excluídas.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_3": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "6.3", "nome": "Dor dentoalveolar idiopática persistente",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Dor intraoral dentoalveolar unilateral, recorrendo diariamente por >2 h/dia, por >3 meses.",
+        "Localizada em região dentoalveolar (dente ou osso alveolar); qualidade profunda, maçante, do tipo pressão.",
+        "Exames clínico e radiográfico normais; causas locais excluídas.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_4": {
+      "tipo": "resultado", "diagnostico": true, "codigo": "6.4", "nome": "Dor facial unilateral constante com episódios de exacerbação (CUFPA)",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Dor facial estritamente unilateral e constante, de intensidade leve a moderada, por >3 meses.",
+        "Episódios de exacerbação em crises, até seis vezes/dia, na mesma localização, intensidade moderada a severa, durando 10–30 min.",
+        "Exames clínico e radiográfico normais; causas locais excluídas.",
+        "Sem sinais autonômicos/migranosos típicos. Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    }
+  }
+}
