@@ -177,6 +177,43 @@ body {
 }
 .question__help:empty { display: none; }
 
+/* ---------- Tela de abertura ---------- */
+.card--intro { padding-top: 28px; }
+.intro__title {
+  margin: 0 0 14px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--c-accent-dark);
+}
+.intro__lead {
+  margin: 0 0 22px;
+  font-size: 1.04rem;
+  color: var(--c-text-soft);
+}
+.intro__section { margin-bottom: 22px; }
+.intro__section p { margin: 0 0 10px; color: var(--c-text); font-size: .98rem; }
+.intro__section p:last-child { margin-bottom: 0; }
+.intro__heading {
+  margin: 0 0 8px;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.intro__notice {
+  background: var(--c-warn-bg);
+  border: 1px solid var(--c-warn-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-bottom: 26px;
+}
+.intro__notice p { margin: 0; color: var(--c-text); font-size: .94rem; }
+.intro__heading--warn { color: var(--c-warn); }
+
+.btn--block { width: 100%; min-height: 52px; font-size: 1.05rem; }
+
 /* ---------- Opções (botões de resposta) ---------- */
 .options {
   display: flex;
