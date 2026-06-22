@@ -2,8 +2,8 @@
   "meta": {
     "titulo": "ICOP-AL — Tronco decisório inicial",
     "subtitulo": "Apoio à decisão diagnóstica em dor orofacial (Classificação Internacional de Dor Orofacial, 1ª edição)",
-    "versao": "0.1-tronco",
-    "escopo": "Tronco decisório inicial (initial decision trunk) do ICOP-AL: 6 categorias até o 2º/3º dígito. Não contempla os subtipos de 4º a 7º dígito.",
+    "versao": "1.0-completo",
+    "escopo": "Algoritmo ICOP-AL completo: tronco decisório inicial das 6 categorias com subtipos detalhados até o nível mais específico (até 7º dígito).",
     "fonte_algoritmo": "Shakeri H, et al. Development and validation of the International Classification for Orofacial Pain Algorithm (ICOP-AL). PAIN 167 (2026) e1–e7 e material suplementar.",
     "fonte_classificacao": "Classificação Internacional de Dor Orofacial, Primeira Edição (ICOP) — tradução PT-BR. Conti PCR et al., Headache Medicine 2022;13(1):3-97.",
     "nota_modelagem": "Alguns ramos paralelos do fluxograma (ex.: músculo vs. articulação; trigêmeo vs. glossofaríngeo) foram linearizados em perguntas sequenciais para a navegação clique a clique, preservando os critérios diagnósticos. Nomenclatura e critérios em PT-BR conforme a tradução oficial.",
@@ -16,11 +16,16 @@
       "texto": "A dor se origina na região orofacial?",
       "ajuda": "Considere a queixa principal do paciente. Esta ferramenta cobre apenas dores cuja origem é a região orofacial.",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "info_red_flags" },
-        { "rotulo": "Não", "proximo": "r_sem_dor" }
+        {
+          "rotulo": "Sim",
+          "proximo": "info_red_flags"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "r_sem_dor"
+        }
       ]
     },
-
     "info_red_flags": {
       "tipo": "aviso",
       "ramo": "Triagem inicial",
@@ -37,24 +42,34 @@
       ],
       "proximo": "q_dente"
     },
-
     "q_dente": {
       "tipo": "pergunta",
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Há dor em algum dente?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_pulpar_evidencia" },
-        { "rotulo": "Não", "proximo": "q_gengiva" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_pulpar_evidencia"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_gengiva"
+        }
       ]
     },
-
     "q_pulpar_evidencia": {
       "tipo": "pergunta",
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Há evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir DOR PULPAR?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_pulpar_criterio" },
-        { "rotulo": "Não", "proximo": "q_periodontal_evidencia" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_pulpar_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_periodontal_evidencia"
+        }
       ]
     },
     "q_pulpar_criterio": {
@@ -62,18 +77,29 @@
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "A dor está localizada no local da lesão E há ≥1 de: (a) relação temporal entre a dor e o surgimento da lesão/início da doença/trauma; (b) exacerbação por estímulo físico (mecânico, térmico ou químico) aplicado ao dente afetado?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_1_1" },
-        { "rotulo": "Não", "proximo": "q_periodontal_evidencia" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_1_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_periodontal_evidencia"
+        }
       ]
     },
-
     "q_periodontal_evidencia": {
       "tipo": "pergunta",
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Há evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir DOR PERIODONTAL?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_periodontal_criterio" },
-        { "rotulo": "Não", "proximo": "q_gengiva" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_periodontal_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_gengiva"
+        }
       ]
     },
     "q_periodontal_criterio": {
@@ -81,18 +107,29 @@
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "A dor está localizada no local da lesão E é exacerbada por estímulo físico aplicado ao dente afetado (horizontal ou verticalmente) ou ao tecido sobre a raiz?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_1_2" },
-        { "rotulo": "Não", "proximo": "q_gengiva" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_1_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_gengiva"
+        }
       ]
     },
-
     "q_gengiva": {
       "tipo": "pergunta",
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Há dor na gengiva?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_gengiva_evidencia" },
-        { "rotulo": "Não", "proximo": "q_mucosa" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_gengiva_evidencia"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mucosa"
+        }
       ]
     },
     "q_gengiva_evidencia": {
@@ -100,8 +137,14 @@
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Há evidência de lesão ou distúrbio dos tecidos gengivais capaz de causar dor?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_gengiva_criterio" },
-        { "rotulo": "Não", "proximo": "q_mucosa" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_gengiva_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mucosa"
+        }
       ]
     },
     "q_gengiva_criterio": {
@@ -109,19 +152,30 @@
       "ramo": "1. Dor odontogênica / dentoalveolar",
       "texto": "Estão presentes ≥2 de: (1) dor localizada no local da lesão/distúrbio; (2) relação temporal entre dor e surgimento da lesão; (3) exacerbação por manipulação do tecido gengival afetado?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_1_3" },
-        { "rotulo": "Não", "proximo": "q_mucosa" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_1_3"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mucosa"
+        }
       ]
     },
-
     "q_mucosa": {
       "tipo": "pergunta",
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há dor na mucosa oral?",
       "ajuda": "A dor pode irradiar e/ou referir-se a outros locais orofaciais ipsilaterais.",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_mucosa_evidencia" },
-        { "rotulo": "Não", "proximo": "q_salivar" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_mucosa_evidencia"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_salivar"
+        }
       ]
     },
     "q_mucosa_evidencia": {
@@ -129,8 +183,14 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há evidência de lesão ou distúrbio dos tecidos da mucosa oral capaz de causar dor?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_mucosa_criterio" },
-        { "rotulo": "Não", "proximo": "q_salivar" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_mucosa_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_salivar"
+        }
       ]
     },
     "q_mucosa_criterio": {
@@ -138,18 +198,29 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Estão presentes TODOS os três: (1) dor localizada no local da lesão; (2) relação temporal entre dor e surgimento da lesão; (3) exacerbação por manipulação da mucosa oral afetada?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_2_1" },
-        { "rotulo": "Não", "proximo": "q_salivar" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_2_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_salivar"
+        }
       ]
     },
-
     "q_salivar": {
       "tipo": "pergunta",
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há dor nas glândulas salivares?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_salivar_evidencia" },
-        { "rotulo": "Não", "proximo": "q_osso" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_salivar_evidencia"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_osso"
+        }
       ]
     },
     "q_salivar_evidencia": {
@@ -157,8 +228,14 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há evidência de lesão ou distúrbio das glândulas salivares capaz de causar dor?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_salivar_criterio" },
-        { "rotulo": "Não", "proximo": "q_osso" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_salivar_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_osso"
+        }
       ]
     },
     "q_salivar_criterio": {
@@ -166,18 +243,29 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "A dor está localizada no local da lesão E há ≥1 de: (a) relação temporal entre dor e surgimento da lesão; (b) exacerbação por pressão sobre a glândula salivar afetada?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_2_2" },
-        { "rotulo": "Não", "proximo": "q_osso" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_2_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_osso"
+        }
       ]
     },
-
     "q_osso": {
       "tipo": "pergunta",
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há dor no osso maxilar/mandibular?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_osso_evidencia" },
-        { "rotulo": "Não", "proximo": "q_mastig" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_osso_evidencia"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mastig"
+        }
       ]
     },
     "q_osso_evidencia": {
@@ -185,8 +273,14 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "Há evidência de lesão ou distúrbio do osso capaz de causar dor?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_osso_criterio" },
-        { "rotulo": "Não", "proximo": "q_mastig" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_osso_criterio"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mastig"
+        }
       ]
     },
     "q_osso_criterio": {
@@ -194,18 +288,29 @@
       "ramo": "1. Mucosa oral, glândula salivar e osso",
       "texto": "A dor está localizada no local da lesão óssea E há ≥1 de: (a) relação temporal entre dor e surgimento da lesão óssea; (b) exacerbação por pressão sobre a lesão óssea?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_1_2_3" },
-        { "rotulo": "Não", "proximo": "q_mastig" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_1_2_3"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_mastig"
+        }
       ]
     },
-
     "q_mastig": {
       "tipo": "pergunta",
       "ramo": "2-3. Dor miofascial e na ATM",
       "texto": "Há dor na mandíbula, têmpora, orelha e/ou à frente da orelha?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_mastig_modificada" },
-        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_mastig_modificada"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_nervo_paroxismo"
+        }
       ]
     },
     "q_mastig_modificada": {
@@ -213,8 +318,14 @@
       "ramo": "2-3. Dor miofascial e na ATM",
       "texto": "A dor é modificada (aumenta ou diminui) pelo movimento, função ou parafunção mandibular (ex.: ranger ou apertar os dentes)?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_musculo_ou_atm" },
-        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_musculo_ou_atm"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_nervo_paroxismo"
+        }
       ]
     },
     "q_musculo_ou_atm": {
@@ -223,9 +334,18 @@
       "texto": "Onde a dor é confirmada ao exame?",
       "ajuda": "Distinção entre dor de origem muscular (dor miofascial) e dor de origem articular (ATM).",
       "opcoes": [
-        { "rotulo": "Músculo (temporal e/ou masseter), provocada por palpação muscular e/ou abertura bucal", "proximo": "q_miofascial_secundaria" },
-        { "rotulo": "Articulação temporomandibular (ATM), confirmada ao exame", "proximo": "q_atm_confirmacao" },
-        { "rotulo": "Nenhuma das anteriores", "proximo": "q_nervo_paroxismo" }
+        {
+          "rotulo": "Músculo (temporal e/ou masseter), provocada por palpação muscular e/ou abertura bucal",
+          "proximo": "q_miofascial_secundaria"
+        },
+        {
+          "rotulo": "Articulação temporomandibular (ATM), confirmada ao exame",
+          "proximo": "q_atm_confirmacao"
+        },
+        {
+          "rotulo": "Nenhuma das anteriores",
+          "proximo": "q_nervo_paroxismo"
+        }
       ]
     },
     "q_miofascial_secundaria": {
@@ -233,8 +353,14 @@
       "ramo": "2-3. Dor miofascial e na ATM",
       "texto": "Foi diagnosticada uma disfunção subjacente capaz de causar a dor miofascial (tendinite, miosite ou espasmo muscular), com evidência de causalidade?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_2_2" },
-        { "rotulo": "Não", "proximo": "r_2_1" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_2_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "r_2_1"
+        }
       ]
     },
     "q_atm_confirmacao": {
@@ -242,8 +368,14 @@
       "ramo": "2-3. Dor miofascial e na ATM",
       "texto": "A dor está localizada na área da ATM (confirmada ao exame), provocada por palpação do polo lateral do côndilo e/ou por abertura máxima, movimentos laterais e/ou protrusão, e modificada pela função mandibular?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_atm_secundaria" },
-        { "rotulo": "Não", "proximo": "q_nervo_paroxismo" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_atm_secundaria"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_nervo_paroxismo"
+        }
       ]
     },
     "q_atm_secundaria": {
@@ -251,20 +383,34 @@
       "ramo": "2-3. Dor miofascial e na ATM",
       "texto": "Foi diagnosticado um distúrbio subjacente capaz de causar dor na ATM (artrite, deslocamento de disco, doença articular degenerativa ou subluxação), com evidência de causalidade?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_3_2" },
-        { "rotulo": "Não", "proximo": "r_3_1" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_3_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "r_3_1"
+        }
       ]
     },
-
     "q_nervo_paroxismo": {
       "tipo": "pergunta",
       "ramo": "4. Lesão/doença dos nervos cranianos",
       "texto": "A dor está relacionada à distribuição do nervo trigêmeo ou do nervo glossofaríngeo?",
       "ajuda": "Glossofaríngeo: parte posterior da língua, fossa tonsilar, faringe, abaixo do ângulo da mandíbula e/ou orelha.",
       "opcoes": [
-        { "rotulo": "Trigêmeo", "proximo": "q_trigemeo_neuralgia" },
-        { "rotulo": "Glossofaríngeo", "proximo": "q_glosso_neuralgia" },
-        { "rotulo": "Nenhum dos dois", "proximo": "info_cat5" }
+        {
+          "rotulo": "Trigêmeo",
+          "proximo": "q_trigemeo_neuralgia"
+        },
+        {
+          "rotulo": "Glossofaríngeo",
+          "proximo": "q_glosso_neuralgia"
+        },
+        {
+          "rotulo": "Nenhum dos dois",
+          "proximo": "info_cat5"
+        }
       ]
     },
     "q_trigemeo_neuralgia": {
@@ -272,8 +418,14 @@
       "ramo": "4. Lesão/doença dos nervos cranianos",
       "texto": "As crises têm TODAS: duração de fração de segundo a 2 min, intensidade forte e qualidade tipo choque elétrico/fisgada/facada/aguda, E são desencadeadas por estímulos inócuos na distribuição do trigêmeo?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_4_1_1" },
-        { "rotulo": "Não", "proximo": "q_trigemeo_neuropatica" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_4_1_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_trigemeo_neuropatica"
+        }
       ]
     },
     "q_trigemeo_neuropatica": {
@@ -281,8 +433,14 @@
       "ramo": "4. Lesão/doença dos nervos cranianos",
       "texto": "A dor é contínua ou quase contínua (queimação, aperto, dolorimento ou alfinetadas/agulhadas), dentro da distribuição do trigêmeo, com alterações somatossensoriais clinicamente detectáveis?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_4_1_2" },
-        { "rotulo": "Não", "proximo": "info_cat5" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_4_1_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "info_cat5"
+        }
       ]
     },
     "q_glosso_neuralgia": {
@@ -290,8 +448,14 @@
       "ramo": "4. Lesão/doença dos nervos cranianos",
       "texto": "As crises têm TODAS: duração de segundos a 2 min, intensidade grave, qualidade tipo choque elétrico/tiro/punhalada/cortante, E são precipitadas por engolir, tossir, falar ou bocejar?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_4_2_1" },
-        { "rotulo": "Não", "proximo": "q_glosso_neuropatica" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_4_2_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_glosso_neuropatica"
+        }
       ]
     },
     "q_glosso_neuropatica": {
@@ -299,11 +463,16 @@
       "ramo": "4. Lesão/doença dos nervos cranianos",
       "texto": "A dor é contínua ou quase contínua na distribuição do glossofaríngeo (frequentemente também na orelha ipsilateral), descrita como queimação/aperto ou alfinetadas/agulhadas?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_4_2_2" },
-        { "rotulo": "Não", "proximo": "info_cat5" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_4_2_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "info_cat5"
+        }
       ]
     },
-
     "info_cat5": {
       "tipo": "aviso",
       "ramo": "5. Semelhantes a cefaleias primárias",
@@ -315,8 +484,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "Há ≥5 crises de dor facial e/ou oral, SEM dor de cabeça, durando 4–72 h, com ≥2 de (unilateral, pulsátil, intensidade moderada/forte, agravada por atividade física) E acompanhadas por náusea/vômito ou fotofobia+fonofobia?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "q_migranea_cronica" },
-        { "rotulo": "Não", "proximo": "q_tensional" }
+        {
+          "rotulo": "Sim",
+          "proximo": "q_migranea_cronica"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_tensional"
+        }
       ]
     },
     "q_migranea_cronica": {
@@ -324,8 +499,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "A dor ocorre em ≥15 dias/mês por >3 meses, sendo migranosa em ≥8 dias/mês (ou interpretada como migrânea no início e aliviada por triptano/ergotamínico)?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_1_2" },
-        { "rotulo": "Não", "proximo": "r_5_1_1" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_1_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "r_5_1_1"
+        }
       ]
     },
     "q_tensional": {
@@ -333,8 +514,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "A dor orofacial, sem dor de cabeça, tem ≥2 de (bilateral, em pressão/aperto não pulsátil, intensidade leve/moderada, não agravada por atividade física rotineira), SEM náusea/vômito e no máximo um entre fotofobia ou fonofobia?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_2" },
-        { "rotulo": "Não", "proximo": "q_salvas" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_salvas"
+        }
       ]
     },
     "q_salvas": {
@@ -342,8 +529,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "Há ≥5 crises de dor forte unilateral, facial e/ou oral, durando 15–180 min, com ≥1 sintoma autonômico ipsilateral e/ou inquietude, ocorrendo de uma a cada dois dias até oito por dia?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_3_1" },
-        { "rotulo": "Não", "proximo": "q_hemifacial" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_3_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_hemifacial"
+        }
       ]
     },
     "q_hemifacial": {
@@ -351,8 +544,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "Há ≥20 crises de dor forte unilateral, facial e/ou oral, durando 2–30 min, com frequência >5/dia, com ≥1 sintoma autonômico ipsilateral e/ou prevenção absoluta por indometacina?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_3_2" },
-        { "rotulo": "Não", "proximo": "q_sunfa" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_3_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_sunfa"
+        }
       ]
     },
     "q_sunfa": {
@@ -360,8 +559,14 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "Há ≥20 crises de dor facial e/ou oral unilateral, moderada/forte, durando 1–600 s (facadas únicas, séries ou em 'dente de serra'), com ≥1 sinal autonômico craniofacial ipsilateral, ao menos uma por dia?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_3_3" },
-        { "rotulo": "Não", "proximo": "q_neurovascular" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_3_3"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_neurovascular"
+        }
       ]
     },
     "q_neurovascular": {
@@ -369,11 +574,16 @@
       "ramo": "5. Semelhantes a cefaleias primárias",
       "texto": "Há ≥5 crises de dor intraoral unilateral, de duração variável, intensidade moderada/forte, semelhante a dor de dente e/ou pulsátil, acompanhada de ≥1 sintoma autonômico/migranoso, com exames clínico e radiográfico normais?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_5_4" },
-        { "rotulo": "Não", "proximo": "info_cat6" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_5_4"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "info_cat6"
+        }
       ]
     },
-
     "info_cat6": {
       "tipo": "aviso",
       "ramo": "6. Dor orofacial idiopática",
@@ -385,8 +595,14 @@
       "ramo": "6. Dor orofacial idiopática",
       "texto": "Há sensação de queimação na superfície da mucosa oral, recorrente diária, por >2 h/dia, por >3 meses, com mucosa de aparência normal e causas locais/sistêmicas excluídas?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_6_1" },
-        { "rotulo": "Não", "proximo": "q_pidp" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_6_1"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_pidp"
+        }
       ]
     },
     "q_pidp": {
@@ -394,8 +610,14 @@
       "ramo": "6. Dor orofacial idiopática",
       "texto": "A dor está localizada em região dentoalveolar (dente ou osso alveolar), unilateral, recorrente diária por >2 h/dia por >3 meses, de qualidade profunda/maçante/em pressão, com exames clínico e radiográfico normais e causas locais excluídas?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_6_3" },
-        { "rotulo": "Não", "proximo": "q_cufpa" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_6_3"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_cufpa"
+        }
       ]
     },
     "q_cufpa": {
@@ -403,8 +625,14 @@
       "ramo": "6. Dor orofacial idiopática",
       "texto": "Há dor facial estritamente unilateral e constante (leve a moderada, por >3 meses) COM episódios de exacerbação em crises (até 6×/dia, mesma localização, moderada/severa, 10–30 min), com exames normais e sem sinais autonômicos/migranosos?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_6_4" },
-        { "rotulo": "Não", "proximo": "q_pifp" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_6_4"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "q_pifp"
+        }
       ]
     },
     "q_pifp": {
@@ -412,11 +640,16 @@
       "ramo": "6. Dor orofacial idiopática",
       "texto": "Há dor facial recorrente diária por >2 h/dia por >3 meses, de localização imprecisa (não seguindo um nervo periférico), qualidade maçante/dolorida/irritante, com exames clínico e radiográfico normais e causas locais excluídas?",
       "opcoes": [
-        { "rotulo": "Sim", "proximo": "r_6_2" },
-        { "rotulo": "Não", "proximo": "r_nao_classificada" }
+        {
+          "rotulo": "Sim",
+          "proximo": "r_6_2"
+        },
+        {
+          "rotulo": "Não",
+          "proximo": "r_nao_classificada"
+        }
       ]
     },
-
     "r_sem_dor": {
       "tipo": "resultado",
       "diagnostico": false,
@@ -439,67 +672,93 @@
         "Considere 'Outra dor orofacial especificada' ou 'Dor orofacial não especificada' (ICOP), reavaliação clínica e/ou os níveis mais específicos (4º–7º dígito) da ICOP, fora do escopo desta versão."
       ]
     },
-
     "r_1_1_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.1", "nome": "Dor pulpar",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1",
+      "nome": "Dor pulpar",
       "categoria": "1. Dor odontogênica",
       "criterios": [
         "Dor em um dente.",
         "Evidência clínica, laboratorial, por imagem e/ou anamnéstica de lesão, doença ou trauma capaz de produzir dor pulpar.",
         "Dor localizada no local da lesão e ≥1 de: (a) relação temporal com a lesão/doença/trauma; (b) exacerbação por estímulo físico (mecânico, térmico ou químico) ao dente afetado.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_1_1"
     },
     "r_1_1_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.2", "nome": "Dor periodontal",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2",
+      "nome": "Dor periodontal",
       "categoria": "1. Dor odontogênica",
       "criterios": [
         "Evidência de lesão, doença ou trauma capaz de produzir dor periodontal.",
         "Dor localizada no local da lesão.",
         "Dor exacerbada por estímulo físico aplicado ao dente afetado (horizontal ou verticalmente) ou ao tecido sobre a raiz.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_1_2"
     },
     "r_1_1_3": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.1.3", "nome": "Dor gengival",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3",
+      "nome": "Dor gengival",
       "categoria": "1. Dor odontogênica",
       "criterios": [
         "Dor na gengiva com evidência de lesão ou distúrbio dos tecidos gengivais capaz de causar dor.",
         "≥2 de: (1) dor localizada no local da lesão; (2) relação temporal com o surgimento da lesão; (3) exacerbação por manipulação do tecido gengival afetado.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_1_3"
     },
     "r_1_2_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.1", "nome": "Dor na mucosa oral",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1",
+      "nome": "Dor na mucosa oral",
       "categoria": "1. Mucosa oral, glândula salivar e osso",
       "criterios": [
         "Dor na mucosa oral com evidência de lesão ou distúrbio da mucosa capaz de causar dor.",
         "Todos os três: (1) dor localizada no local da lesão; (2) relação temporal com o surgimento da lesão; (3) exacerbação por manipulação da mucosa oral afetada.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_2_1"
     },
     "r_1_2_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.2", "nome": "Dor nas glândulas salivares",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2",
+      "nome": "Dor nas glândulas salivares",
       "categoria": "1. Mucosa oral, glândula salivar e osso",
       "criterios": [
         "Dor nas glândulas salivares com evidência de lesão ou distúrbio das glândulas capaz de causar dor.",
         "Dor localizada no local da lesão.",
         "≥1 de: (a) relação temporal com o surgimento da lesão; (b) exacerbação por pressão sobre a glândula salivar afetada.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_2_2"
     },
     "r_1_2_3": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "1.2.3", "nome": "Dor óssea mandibular",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3",
+      "nome": "Dor óssea mandibular",
       "categoria": "1. Mucosa oral, glândula salivar e osso",
       "criterios": [
         "Dor no osso maxilar/mandibular com evidência de lesão ou distúrbio ósseo capaz de causar dor.",
         "Dor localizada no local da lesão óssea.",
         "≥1 de: (a) relação temporal com o surgimento da lesão óssea; (b) exacerbação por pressão sobre a lesão óssea.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_1_2_3"
     },
     "r_2_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "2.1", "nome": "Dor miofascial orofacial primária",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1",
+      "nome": "Dor miofascial orofacial primária",
       "categoria": "2. Dor miofascial orofacial",
       "criterios": [
         "Dor nos músculos mastigatórios, sem distúrbio causal identificado.",
@@ -507,20 +766,28 @@
         "Modificada (aumenta ou diminui) pelo movimento, função ou parafunção mandibular.",
         "Ocorrendo em um ou mais episódios ou de forma contínua.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_2_1"
     },
     "r_2_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "2.2", "nome": "Dor miofascial orofacial secundária",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.2",
+      "nome": "Dor miofascial orofacial secundária",
       "categoria": "2. Dor miofascial orofacial",
       "criterios": [
         "Dor miofascial em músculo mastigatório, confirmada ao exame e provocada por palpação e/ou abertura bucal.",
         "Diagnóstico de disfunção subjacente capaz de causar a dor miofascial (tendinite, miosite ou espasmo muscular).",
         "Evidência de causalidade demonstrada por ≥2: relação temporal com a disfunção; piora paralela à progressão; melhora paralela à resolução.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_2_2"
     },
     "r_3_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "3.1", "nome": "Dor primária na articulação temporomandibular",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1",
+      "nome": "Dor primária na articulação temporomandibular",
       "categoria": "3. Dor na articulação temporomandibular (ATM)",
       "criterios": [
         "Dor na e/ou à frente da(s) orelha(s), sem distúrbio causal conhecido.",
@@ -528,59 +795,83 @@
         "Modificada pelo movimento, função ou parafunção mandibular.",
         "Ocorrendo em um ou mais episódios ou de forma contínua.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_3_1"
     },
     "r_3_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "3.2", "nome": "Dor secundária na articulação temporomandibular",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2",
+      "nome": "Dor secundária na articulação temporomandibular",
       "categoria": "3. Dor na articulação temporomandibular (ATM)",
       "criterios": [
         "Dor na ATM, confirmada ao exame e provocada por palpação e/ou movimentos mandibulares.",
         "Diagnóstico de distúrbio subjacente capaz de causar dor na ATM (artrite, deslocamento de disco, doença articular degenerativa ou subluxação).",
         "Evidência de causalidade demonstrada por ≥2: relação temporal; piora paralela à progressão; melhora paralela à resolução do distúrbio.",
         "Não melhor explicada por outro diagnóstico da ICOP."
-      ]
+      ],
+      "refinar": "qr_3_2"
     },
     "r_4_1_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "4.1.1", "nome": "Neuralgia do trigêmeo",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1",
+      "nome": "Neuralgia do trigêmeo",
       "categoria": "4. Lesão ou doença dos nervos cranianos",
       "criterios": [
         "Dores faciais paroxísticas recorrentes, unilaterais, na distribuição de uma ou mais divisões do trigêmeo.",
         "A dor tem todas: duração de fração de segundo a 2 min; intensidade forte; qualidade tipo choque elétrico, fisgada, facada ou aguda.",
         "Desencadeada por estímulos inócuos na distribuição do trigêmeo afetada.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_4_1_1"
     },
     "r_4_1_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "4.1.2", "nome": "Outra dor neuropática do trigêmeo",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2",
+      "nome": "Outra dor neuropática do trigêmeo",
       "categoria": "4. Lesão ou doença dos nervos cranianos",
       "criterios": [
         "Dor na distribuição de um ou mais ramos do trigêmeo, indicativa de dano neural.",
         "Dor geralmente contínua ou quase contínua (queimação, aperto, dolorimento ou alfinetadas/agulhadas); paroxismos breves podem sobrepor-se, mas não predominam.",
         "Alterações somatossensoriais clinicamente detectáveis na distribuição do trigêmeo (alodinia mecânica, hiperalgesia/alodinia ao frio comuns).",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_4_1_2"
     },
     "r_4_2_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "4.2.1", "nome": "Neuralgia do glossofaríngeo",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.1",
+      "nome": "Neuralgia do glossofaríngeo",
       "categoria": "4. Lesão ou doença dos nervos cranianos",
       "criterios": [
         "Ataques paroxísticos recorrentes de dor unilateral na distribuição do glossofaríngeo (parte posterior da língua, fossa tonsilar, faringe, ângulo da mandíbula e/ou orelha).",
         "A dor tem todas: duração de segundos a 2 min; intensidade grave; qualidade tipo choque elétrico, tiro, punhalada ou cortante; precipitada por engolir, tossir, falar ou bocejar.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_4_2_1"
     },
     "r_4_2_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "4.2.2", "nome": "Dor neuropática glossofaríngea",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.2",
+      "nome": "Dor neuropática glossofaríngea",
       "categoria": "4. Lesão ou doença dos nervos cranianos",
       "criterios": [
         "Dor na distribuição do glossofaríngeo, frequentemente percebida também na orelha ipsilateral.",
         "Dor geralmente contínua ou quase contínua (queimação ou aperto, ou alfinetadas/agulhadas); paroxismos breves podem sobrepor-se, mas não predominam.",
         "Podem estar presentes déficits sensoriais na parte posterior da língua e fossa tonsilar; reflexo do vômito fraco ou ausente.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_4_2_2"
     },
     "r_5_1_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.1.1", "nome": "Migrânea orofacial episódica",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.1.1",
+      "nome": "Migrânea orofacial episódica",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "≥5 crises de dor facial e/ou oral, sem dor de cabeça, com duração de 4–72 h (não tratada ou tratada sem sucesso).",
@@ -590,7 +881,10 @@
       ]
     },
     "r_5_1_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.1.2", "nome": "Migrânea orofacial crônica",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.1.2",
+      "nome": "Migrânea orofacial crônica",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "Dor facial e/ou oral, sem dor de cabeça, em ≥15 dias/mês por >3 meses.",
@@ -600,7 +894,10 @@
       ]
     },
     "r_5_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.2", "nome": "Dor orofacial do tipo tensão",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.2",
+      "nome": "Dor orofacial do tipo tensão",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "Dor episódica ou crônica exclusivamente na região orofacial, sem dor de cabeça.",
@@ -610,83 +907,2989 @@
       ]
     },
     "r_5_3_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.1", "nome": "Crise de dor orofacial em salvas",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.1",
+      "nome": "Crise de dor orofacial em salvas",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "≥5 crises de dor forte/muito forte, unilateral, facial e/ou oral, sem dor de cabeça, durando 15–180 min.",
         "≥1 sintoma autonômico ipsilateral (injeção conjuntival/lacrimejamento, congestão nasal/rinorreia, edema palpebral, sudorese frontal/facial, miose/ptose) e/ou sensação de inquietude/agitação.",
         "Frequência entre uma a cada dois dias e oito por dia.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_5_3_1"
     },
     "r_5_3_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.2", "nome": "Dor paroxística hemifacial",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.2",
+      "nome": "Dor paroxística hemifacial",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "≥20 crises de dor forte, unilateral, facial e/ou oral, sem dor de cabeça, durando 2–30 min.",
         "≥1 sintoma autonômico ipsilateral e/ou prevenção absoluta por doses terapêuticas de indometacina.",
         "Frequência >5 por dia.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_5_3_2"
     },
     "r_5_3_3": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.3.3", "nome": "Crises de dor facial neuralgiforme, unilateral, de curta duração, com sintomas autonômicos cranianos (SUNFA)",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.3",
+      "nome": "Crises de dor facial neuralgiforme, unilateral, de curta duração, com sintomas autonômicos cranianos (SUNFA)",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "≥20 crises de dor facial e/ou oral unilateral, moderada/forte, sem dor de cabeça, durando 1–600 s (facadas únicas, séries ou em padrão de 'dente de serra').",
         "≥1 sinal/sintoma autonômico craniofacial ipsilateral.",
         "Frequência de ao menos uma por dia.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_5_3_3"
     },
     "r_5_4": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "5.4", "nome": "Dor orofacial neurovascular",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.4",
+      "nome": "Dor orofacial neurovascular",
       "categoria": "5. Semelhantes a cefaleias primárias",
       "criterios": [
         "≥5 crises de dor intraoral unilateral, de duração variável, sem dor de cabeça.",
         "Dor com intensidade moderada ou forte e qualidade semelhante a dor de dente e/ou pulsátil.",
         "Acompanhada por ≥1 de: lacrimejamento/injeção conjuntival; rinorreia/congestão nasal; edema de bochecha; fotofobia/fonofobia; náusea/vômito.",
         "Sem causa local; exames clínico e radiográfico normais. Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_5_4"
     },
     "r_6_1": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "6.1", "nome": "Síndrome da ardência bucal (SAB)",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.1",
+      "nome": "Síndrome da ardência bucal (SAB)",
       "categoria": "6. Dor orofacial idiopática",
       "criterios": [
         "Dor oral recorrente diária, sentida por >2 h/dia, por >3 meses.",
         "Qualidade de queimação, sentida na superfície da mucosa oral.",
         "Mucosa oral com aparência normal; fatores causais locais e sistêmicos excluídos.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3. (Testes sensoriais distinguem 6.1.1 e 6.1.2.)"
-      ]
+      ],
+      "refinar": "qr_6_1"
     },
     "r_6_2": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "6.2", "nome": "Dor facial idiopática persistente (DFIP)",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.2",
+      "nome": "Dor facial idiopática persistente (DFIP)",
       "categoria": "6. Dor orofacial idiopática",
       "criterios": [
         "Dor facial recorrendo diariamente por >2 h/dia, por >3 meses.",
         "Localização imprecisa, não seguindo a distribuição de um nervo periférico; qualidade maçante, dolorida ou irritante.",
         "Exames clínico e radiográfico normais; causas locais excluídas.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_6_2"
     },
     "r_6_3": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "6.3", "nome": "Dor dentoalveolar idiopática persistente",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.3",
+      "nome": "Dor dentoalveolar idiopática persistente",
       "categoria": "6. Dor orofacial idiopática",
       "criterios": [
         "Dor intraoral dentoalveolar unilateral, recorrendo diariamente por >2 h/dia, por >3 meses.",
         "Localizada em região dentoalveolar (dente ou osso alveolar); qualidade profunda, maçante, do tipo pressão.",
         "Exames clínico e radiográfico normais; causas locais excluídas.",
         "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
-      ]
+      ],
+      "refinar": "qr_6_3"
     },
     "r_6_4": {
-      "tipo": "resultado", "diagnostico": true, "codigo": "6.4", "nome": "Dor facial unilateral constante com episódios de exacerbação (CUFPA)",
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.4",
+      "nome": "Dor facial unilateral constante com episódios de exacerbação (CUFPA)",
       "categoria": "6. Dor orofacial idiopática",
       "criterios": [
         "Dor facial estritamente unilateral e constante, de intensidade leve a moderada, por >3 meses.",
         "Episódios de exacerbação em crises, até seis vezes/dia, na mesma localização, intensidade moderada a severa, durando 10–30 min.",
         "Exames clínico e radiográfico normais; causas locais excluídas.",
         "Sem sinais autonômicos/migranosos típicos. Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_1_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1",
+      "nome": "Dor pulpar atribuída à hipersensibilidade",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Dor evocada por estímulo externo (quente, frio, doce), cessando em poucos segundos.",
+        "Dor com sensação aguda/profunda e/ou mal localizada.",
+        "Causalidade plausível por associação anatômica, funcional e/ou temporal."
+      ],
+      "refinar": "qr_1_1_1_1"
+    },
+    "r_1_1_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.1",
+      "nome": "Dor pulpar atribuída à fratura de esmalte",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trinca ou fratura incompleta do dente, envolvendo o esmalte, identificada à inspeção visual.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.2",
+      "nome": "Dor pulpar atribuída à exposição dentinária",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Superfície dentinária do dente afetado exposta.",
+        "≥1 de: dor aguda à mordida; dor à liberação da pressão de mordida; hipersensibilidade ao frio."
+      ],
+      "refinar": "qr_1_1_1_1_2"
+    },
+    "r_1_1_1_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.2.1",
+      "nome": "Dor pulpar atribuída ao desgaste ou abrasão dentários",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Evidência clínica de desgaste/abrasão (superfícies lisas e planas, fora do contorno anatômico).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.2.2",
+      "nome": "Dor pulpar atribuída à fratura resultando em exposição dentinária",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Fratura envolvendo esmalte, cemento e/ou dentina, diagnosticada clínica e/ou radiograficamente.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.2.3",
+      "nome": "Dor pulpar atribuída às alterações de desenvolvimento do tecido duro do dente",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Defeito de desenvolvimento (ex.: hipomineralização, amelogênese/dentinogênese imperfeita).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_1_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Desgaste/abrasão",
+          "proximo": "r_1_1_1_1_2_1"
+        },
+        {
+          "rotulo": "Fratura com exposição de dentina",
+          "proximo": "r_1_1_1_1_2_2"
+        },
+        {
+          "rotulo": "Alteração de desenvolvimento",
+          "proximo": "r_1_1_1_1_2_3"
+        }
+      ]
+    },
+    "r_1_1_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.3",
+      "nome": "Dor pulpar atribuída aos procedimentos odontológicos",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Tratamento dentário recente aplicado ao dente afetado (início típico em horas a dias)."
+      ],
+      "refinar": "qr_1_1_1_1_3"
+    },
+    "r_1_1_1_1_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.3.1",
+      "nome": "Dor pulpar atribuída à remoção extensa de dentina",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Remoção recente de dentina profunda (próxima à polpa) e/ou ampla.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.3.2",
+      "nome": "Dor pulpar atribuída à realização de restauração",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Colocação recente de restauração direta ou indireta no dente afetado.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.3.3",
+      "nome": "Dor pulpar atribuída à hiperoclusão ou hiperarticulação após procedimento restaurador",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Procedimento restaurador deixou o dente em hiperoclusão e/ou hiperarticulação.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_1_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Remoção extensa de dentina",
+          "proximo": "r_1_1_1_1_3_1"
+        },
+        {
+          "rotulo": "Restauração",
+          "proximo": "r_1_1_1_1_3_2"
+        },
+        {
+          "rotulo": "Hiperoclusão/hiperarticulação",
+          "proximo": "r_1_1_1_1_3_3"
+        }
+      ]
+    },
+    "r_1_1_1_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.4",
+      "nome": "Dor pulpar atribuída à sensibilização central",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Outra dor orofacial, cervical ou corporal difusa diagnosticada, com sinais de sensibilização central (dor referida, somação temporal, alodinia).",
+        "Dor espontânea e/ou que flutua com a outra condição; não aliviada de forma consistente por anestesia local ou analgésicos periféricos.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_1_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.1.5",
+      "nome": "Dor pulpar atribuída à hipersensibilidade devido a outras causas",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio capaz de causar dor pulpar, diferente de 1.1.1.1.1 a 1.1.1.1.4.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Fratura de esmalte",
+          "proximo": "r_1_1_1_1_1"
+        },
+        {
+          "rotulo": "Exposição dentinária",
+          "proximo": "r_1_1_1_1_2"
+        },
+        {
+          "rotulo": "Procedimento odontológico",
+          "proximo": "r_1_1_1_1_3"
+        },
+        {
+          "rotulo": "Sensibilização central",
+          "proximo": "r_1_1_1_1_4"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_1_1_1_1_5"
+        }
+      ]
+    },
+    "r_1_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.2",
+      "nome": "Dor pulpar atribuída à exposição da polpa dentária em decorrência de trauma dental",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trauma dental expôs tecido pulpar vital (fratura complicada de coroa e/ou raiz).",
+        "Dor surgiu minutos a horas após o trauma.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3",
+      "nome": "Dor pulpar atribuída à pulpite (inflamação pulpar)",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Pulpite diagnosticada no dente afetado."
+      ],
+      "refinar": "qr_1_1_1_3"
+    },
+    "r_1_1_1_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.1",
+      "nome": "Dor pulpar atribuída à pulpite reversível devido à infecção de dentina",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Zona de dentina íntegra cobrindo a polpa, com infecção (cárie ou dentina exposta à microbiota).",
+        "Dor curta, provocada, que não ultrapassa o estímulo."
+      ],
+      "refinar": "qr_1_1_1_3_1"
+    },
+    "r_1_1_1_3_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.1.1",
+      "nome": "Dor pulpar atribuída à pulpite reversível devido a cáries que não se estendem à polpa",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Cárie diagnosticada sem evidência clínica/radiográfica de extensão à polpa.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.1.2",
+      "nome": "Dor pulpar atribuída à pulpite reversível devido à fratura de tecido duro dental com exposição de dentina",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Fratura (esmalte, dentina ou cemento) com exposição de dentina.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.1.3",
+      "nome": "Dor pulpar atribuída à pulpite reversível devido à trinca dental sem evidência de perda de estrutura dentária",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trinca ou fratura incompleta (esmalte ou esmalte e dentina) diagnosticada.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_3_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Cárie sem atingir a polpa",
+          "proximo": "r_1_1_1_3_1_1"
+        },
+        {
+          "rotulo": "Fratura com exposição de dentina",
+          "proximo": "r_1_1_1_3_1_2"
+        },
+        {
+          "rotulo": "Trinca sem perda de estrutura",
+          "proximo": "r_1_1_1_3_1_3"
+        }
+      ]
+    },
+    "r_1_1_1_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.2",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à infecção da dentina",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Sem zona de dentina íntegra cobrindo a polpa e/ou dor: espontânea, contínua, que ultrapassa o estímulo, intensa ou pouco responsiva a AINEs."
+      ],
+      "refinar": "qr_1_1_1_3_2"
+    },
+    "r_1_1_1_3_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.2.1",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à cárie se estendendo para o tecido pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Cárie profunda com evidência de extensão à polpa.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.2.2",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à fratura de tecido duro dentário sem exposição pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Fratura (esmalte/dentina/cemento) sem exposição de tecido pulpar vital.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.2.3",
+      "nome": "Dor pulpar atribuída à pulpite irreversível de um dente com trinca sem evidência de perda de estrutura dentária",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trinca ou fratura incompleta (esmalte ou esmalte e dentina) diagnosticada.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_3_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Cárie atingindo a polpa",
+          "proximo": "r_1_1_1_3_2_1"
+        },
+        {
+          "rotulo": "Fratura sem exposição pulpar",
+          "proximo": "r_1_1_1_3_2_2"
+        },
+        {
+          "rotulo": "Trinca sem perda de estrutura",
+          "proximo": "r_1_1_1_3_2_3"
+        }
+      ]
+    },
+    "r_1_1_1_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.3",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à infecção do tecido pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Polpa exposta à microbiota da cavidade oral."
+      ],
+      "refinar": "qr_1_1_1_3_3"
+    },
+    "r_1_1_1_3_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.3.1",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à exposição por cárie e infecção do tecido pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Cárie profunda com exposição da polpa à microbiota.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.3.2",
+      "nome": "Dor pulpar atribuída à pulpite irreversível devido à fratura do tecido duro dentário com exposição pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Fratura com exposição de tecido pulpar vital; dor em relação temporal com a fratura.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_3_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Exposição cariosa e infecção",
+          "proximo": "r_1_1_1_3_3_1"
+        },
+        {
+          "rotulo": "Fratura com exposição pulpar",
+          "proximo": "r_1_1_1_3_3_2"
+        }
+      ]
+    },
+    "r_1_1_1_3_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.4",
+      "nome": "Dor pulpar atribuída à pulpite devido à reabsorção radicular cervical externa",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Reabsorção radicular cervical externa observada clínica e/ou radiograficamente.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_1_3_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.3.5",
+      "nome": "Dor pulpar atribuída à pulpite devido a outras causas",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio capaz de causar dor pulpar, diferente de 1.1.1.3.1 a 1.1.1.3.4.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Pulpite reversível (infecção de dentina)",
+          "proximo": "r_1_1_1_3_1"
+        },
+        {
+          "rotulo": "Pulpite irreversível (infecção de dentina)",
+          "proximo": "r_1_1_1_3_2"
+        },
+        {
+          "rotulo": "Pulpite irreversível (infecção da polpa)",
+          "proximo": "r_1_1_1_3_3"
+        },
+        {
+          "rotulo": "Reabsorção cervical externa",
+          "proximo": "r_1_1_1_3_4"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_1_1_1_3_5"
+        }
+      ]
+    },
+    "r_1_1_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.1.4",
+      "nome": "Dor pulpar atribuída à causa sistêmica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Doença/distúrbio sistêmico capaz de causar dor pulpar diagnosticado (ex.: anemia falciforme).",
+        "Não raro vários dentes são afetados.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Hipersensibilidade",
+          "proximo": "r_1_1_1_1"
+        },
+        {
+          "rotulo": "Exposição pulpar por trauma",
+          "proximo": "r_1_1_1_2"
+        },
+        {
+          "rotulo": "Pulpite",
+          "proximo": "r_1_1_1_3"
+        },
+        {
+          "rotulo": "Causa sistêmica",
+          "proximo": "r_1_1_1_4"
+        }
+      ]
+    },
+    "r_1_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1",
+      "nome": "Dor periodontal atribuída à periodontite (inflamação periodontal)",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Periodontite (inflamação periodontal) diagnosticada; causalidade plausível."
+      ],
+      "refinar": "qr_1_1_2_1"
+    },
+    "r_1_1_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.1",
+      "nome": "Dor periodontal atribuída à inflamação periodontal induzida por trauma",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trauma ou lesão envolveu os tecidos periodontais; dor surgiu de minutos a dias após."
+      ],
+      "refinar": "qr_1_1_2_1_1"
+    },
+    "r_1_1_2_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.1.1",
+      "nome": "Dor periodontal atribuída à hiperoclusão ou hiperarticulação",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Mudança nas condições oclusais com hiperoclusão/hiperarticulação; dor reproduzida por percussão/pressão.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.1.2",
+      "nome": "Dor periodontal pós-operatória",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Intervenção cirúrgica envolveu o periodonto; dor surgiu em horas a dias.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.1.3",
+      "nome": "Dor periodontal atribuída ao traumatismo dentário acidental",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trauma acidental no dente (concussão, subluxação, luxação, intrusão, extrusão, avulsão, fratura radicular).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.1.4",
+      "nome": "Dor periodontal atribuída a outro trauma ou lesão",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trauma não acidental/não violento envolveu o dente afetado.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2_1_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Hiperoclusão/hiperarticulação",
+          "proximo": "r_1_1_2_1_1_1"
+        },
+        {
+          "rotulo": "Pós-operatória",
+          "proximo": "r_1_1_2_1_1_2"
+        },
+        {
+          "rotulo": "Traumatismo dentário acidental",
+          "proximo": "r_1_1_2_1_1_3"
+        },
+        {
+          "rotulo": "Outro trauma ou lesão",
+          "proximo": "r_1_1_2_1_1_4"
+        }
+      ]
+    },
+    "r_1_1_2_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.2",
+      "nome": "Dor periodontal atribuída à periodontite apical devido à doença endodôntica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Periodontite apical decorrente de doença endodôntica diagnosticada."
+      ],
+      "refinar": "qr_1_1_2_1_2"
+    },
+    "r_1_1_2_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.2.1",
+      "nome": "Dor periodontal atribuída à inflamação pulpar",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Pulpite diagnosticada (polpa vital, responde ao teste de vitalidade; dente sensível à percussão).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.2.2",
+      "nome": "Dor periodontal atribuída à inflamação endodôntica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Necrose pulpar parcial/total (ou dente já tratado endodonticamente) + evidência de inflamação apical."
+      ],
+      "refinar": "qr_1_1_2_1_2_2"
+    },
+    "r_1_1_2_1_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.2.2.1",
+      "nome": "Dor periodontal atribuída à infecção endodôntica intrarradicular",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Infecção confinada ao sistema de canais radiculares.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.2.2.2",
+      "nome": "Dor periodontal atribuída à infecção endodôntica extrarradicular",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Infecção na superfície radicular externa/tecidos periapicais; dor persiste após desinfecção do canal.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2_1_2_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Intrarradicular",
+          "proximo": "r_1_1_2_1_2_2_1"
+        },
+        {
+          "rotulo": "Extrarradicular",
+          "proximo": "r_1_1_2_1_2_2_2"
+        }
+      ]
+    },
+    "qr_1_1_2_1_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Inflamação pulpar",
+          "proximo": "r_1_1_2_1_2_1"
+        },
+        {
+          "rotulo": "Inflamação/infecção endodôntica",
+          "proximo": "r_1_1_2_1_2_2"
+        }
+      ]
+    },
+    "r_1_1_2_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3",
+      "nome": "Dor periodontal atribuída à doença periodontal",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Doença periodontal diagnosticada; causalidade plausível."
+      ],
+      "refinar": "qr_1_1_2_1_3"
+    },
+    "r_1_1_2_1_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.1",
+      "nome": "Dor periodontal atribuída à periodontite crônica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Periodontite crônica diagnosticada (perda de inserção lentamente progressiva); dor tipicamente leve, à provocação.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.2",
+      "nome": "Dor periodontal atribuída à periodontite agressiva",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Periodontite agressiva diagnosticada (perda de inserção rapidamente progressiva).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.3",
+      "nome": "Dor periodontal atribuída à periodontite como uma manifestação de distúrbio sistêmico",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio sistêmico capaz de causar periodontite diagnosticado; periodontite ocorreu como manifestação dele."
+      ],
+      "refinar": "qr_1_1_2_1_3_3"
+    },
+    "r_1_1_2_1_3_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.3.1",
+      "nome": "Dor periodontal atribuída ao distúrbio hematológico",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio hematológico (ex.: neutropenia adquirida, leucemia).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_3_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.3.2",
+      "nome": "Dor periodontal atribuída ao distúrbio genético",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio genético (ex.: neutropenia familiar/cíclica, Down, Papillon–Lefèvre, hipofosfatasia).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_3_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.3.3",
+      "nome": "Dor periodontal atribuída ao distúrbio sistêmico não especificado",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio sistêmico capaz de causar periodontite, nem hematológico nem genético.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2_1_3_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Distúrbio hematológico",
+          "proximo": "r_1_1_2_1_3_3_1"
+        },
+        {
+          "rotulo": "Distúrbio genético",
+          "proximo": "r_1_1_2_1_3_3_2"
+        },
+        {
+          "rotulo": "Não especificado",
+          "proximo": "r_1_1_2_1_3_3_3"
+        }
+      ]
+    },
+    "r_1_1_2_1_3_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.4",
+      "nome": "Dor periodontal atribuída à periodontite ulcerativa necrosante (NUP)",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "NUP diagnosticada; dor desenvolveu-se em horas a dias do início das ulcerações.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_3_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.3.5",
+      "nome": "Dor periodontal atribuída ao abscesso periodontal",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Abscesso periodontal diagnosticado (sinais agudos de inflamação e perda de inserção, e/ou reabsorção óssea à imagem).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2_1_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Periodontite crônica",
+          "proximo": "r_1_1_2_1_3_1"
+        },
+        {
+          "rotulo": "Periodontite agressiva",
+          "proximo": "r_1_1_2_1_3_2"
+        },
+        {
+          "rotulo": "Manifestação de distúrbio sistêmico",
+          "proximo": "r_1_1_2_1_3_3"
+        },
+        {
+          "rotulo": "Periodontite ulcerativa necrosante (NUP)",
+          "proximo": "r_1_1_2_1_3_4"
+        },
+        {
+          "rotulo": "Abscesso periodontal",
+          "proximo": "r_1_1_2_1_3_5"
+        }
+      ]
+    },
+    "r_1_1_2_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.4",
+      "nome": "Dor periodontal atribuída à periodontite apical e marginal devido à infecção endodôntica combinada e doença periodontal",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Necrose pulpar parcial/total (ou dente tratado) + doença periodontal, ambas presentes.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_2_1_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.1.5",
+      "nome": "Dor periodontal atribuída à peri-implantite infecciosa",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Evidência clínica e/ou radiográfica de infecção peri-implantar.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Induzida por trauma",
+          "proximo": "r_1_1_2_1_1"
+        },
+        {
+          "rotulo": "Periodontite apical (doença endodôntica)",
+          "proximo": "r_1_1_2_1_2"
+        },
+        {
+          "rotulo": "Doença periodontal",
+          "proximo": "r_1_1_2_1_3"
+        },
+        {
+          "rotulo": "Endo-periodontal combinada",
+          "proximo": "r_1_1_2_1_4"
+        },
+        {
+          "rotulo": "Peri-implantite infecciosa",
+          "proximo": "r_1_1_2_1_5"
+        }
+      ]
+    },
+    "r_1_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.2.2",
+      "nome": "Dor periodontal atribuída à causa não inflamatória local",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio local não inflamatório capaz de causar dor periodontal diagnosticado (ex.: cisto periodontal/radicular, tumor).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Periodontite",
+          "proximo": "r_1_1_2_1"
+        },
+        {
+          "rotulo": "Causa não inflamatória local",
+          "proximo": "r_1_1_2_2"
+        }
+      ]
+    },
+    "r_1_1_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1",
+      "nome": "Dor gengival atribuída à gengivite (inflamação gengival)",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Gengivite diagnosticada por sinais inflamatórios (edema, vermelhidão, sangramento)."
+      ],
+      "refinar": "qr_1_1_3_1"
+    },
+    "r_1_1_3_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.1",
+      "nome": "Dor gengival atribuída ao trauma",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Trauma/lesão mecânica, térmica ou química envolveu a gengiva; dor localizada e surgida em minutos a dias.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.2",
+      "nome": "Dor gengival atribuída à infecção",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Infecção dos tecidos gengivais diagnosticada (anamnese, exame e/ou análise microbiológica)."
+      ],
+      "refinar": "qr_1_1_3_1_2"
+    },
+    "r_1_1_3_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.2.1",
+      "nome": "Dor gengival atribuída à infecção bacteriana",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "A infecção é bacteriana.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.2.2",
+      "nome": "Dor gengival atribuída à infecção viral",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "A infecção é viral.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.2.3",
+      "nome": "Dor gengival atribuída à infecção fúngica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "A infecção é fúngica.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_3_1_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Bacteriana",
+          "proximo": "r_1_1_3_1_2_1"
+        },
+        {
+          "rotulo": "Viral",
+          "proximo": "r_1_1_3_1_2_2"
+        },
+        {
+          "rotulo": "Fúngica",
+          "proximo": "r_1_1_3_1_2_3"
+        }
+      ]
+    },
+    "r_1_1_3_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.3",
+      "nome": "Dor gengival atribuída à autoimunidade",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Doença autoimune capaz de causar dor gengival (ex.: penfigoide das membranas mucosas, pênfigo, Sjögren).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.4",
+      "nome": "Dor gengival atribuída à hipersensibilidade ou reação alérgica",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Reação de hipersensibilidade/alérgica nos tecidos gengivais; relação temporal com o agente.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_1_3_1_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.1.5",
+      "nome": "Dor gengival atribuída à inflamação gengival devido à outra causa",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Distúrbio capaz de causar gengivite, diferente de 1.1.3.1.1 a 1.1.3.1.4 (ex.: endócrino, deficiência nutricional, sistêmico).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_3_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Trauma",
+          "proximo": "r_1_1_3_1_1"
+        },
+        {
+          "rotulo": "Infecção",
+          "proximo": "r_1_1_3_1_2"
+        },
+        {
+          "rotulo": "Autoimunidade",
+          "proximo": "r_1_1_3_1_3"
+        },
+        {
+          "rotulo": "Hipersensibilidade/alergia",
+          "proximo": "r_1_1_3_1_4"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_1_1_3_1_5"
+        }
+      ]
+    },
+    "r_1_1_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.1.3.2",
+      "nome": "Dor gengival atribuída à lesão maligna",
+      "categoria": "1. Dor odontogênica",
+      "criterios": [
+        "Lesão maligna dos tecidos gengivais diagnosticada; causalidade plausível.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_1_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Dor odontogênica",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Gengivite",
+          "proximo": "r_1_1_3_1"
+        },
+        {
+          "rotulo": "Lesão maligna",
+          "proximo": "r_1_1_3_2"
+        }
+      ]
+    },
+    "r_1_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1",
+      "nome": "Dor na mucosa oral atribuída à inflamação da mucosa oral",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Inflamação da mucosa oral diagnosticada; causalidade plausível."
+      ],
+      "refinar": "qr_1_2_1_1"
+    },
+    "r_1_2_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.1",
+      "nome": "Dor na mucosa oral atribuída ao trauma ou dano",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Trauma/lesão envolveu a mucosa oral; dor localizada e surgida em minutos a dias."
+      ],
+      "refinar": "qr_1_2_1_1_1"
+    },
+    "r_1_2_1_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.1.1",
+      "nome": "Dor na mucosa oral atribuída ao trauma ou dano não iatrogênico",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Trauma não iatrogênico (mecânico, térmico ou químico; acidental ou autoinfligido).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.1.2",
+      "nome": "Dor na mucosa oral atribuída à cirurgia ou outro dano iatrogênico local",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Trauma cirúrgico ou outro procedimento iatrogênico local (mecânico, térmico ou químico).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.1.3",
+      "nome": "Dor na mucosa oral atribuída à radiação ou quimioterapia",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Mucosite por radioterapia e/ou quimioterapia.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_1_1_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Não iatrogênico",
+          "proximo": "r_1_2_1_1_1_1"
+        },
+        {
+          "rotulo": "Iatrogênico local",
+          "proximo": "r_1_2_1_1_1_2"
+        },
+        {
+          "rotulo": "Radiação/quimioterapia",
+          "proximo": "r_1_2_1_1_1_3"
+        }
+      ]
+    },
+    "r_1_2_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.2",
+      "nome": "Dor na mucosa oral atribuída à infecção",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Infecção da mucosa oral diagnosticada (anamnese, exame e/ou microbiologia)."
+      ],
+      "refinar": "qr_1_2_1_1_2"
+    },
+    "r_1_2_1_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.2.1",
+      "nome": "Dor na mucosa oral atribuída à infecção bacteriana",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é bacteriana.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.2.2",
+      "nome": "Dor na mucosa oral atribuída à infecção viral",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é viral (ex.: HSV, VZV, coxsackie).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.2.3",
+      "nome": "Dor na mucosa oral atribuída à infecção fúngica",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é fúngica (ex.: candidíase).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_1_1_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Bacteriana",
+          "proximo": "r_1_2_1_1_2_1"
+        },
+        {
+          "rotulo": "Viral",
+          "proximo": "r_1_2_1_1_2_2"
+        },
+        {
+          "rotulo": "Fúngica",
+          "proximo": "r_1_2_1_1_2_3"
+        }
+      ]
+    },
+    "r_1_2_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.3",
+      "nome": "Dor na mucosa oral atribuída à autoimunidade",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Doença autoimune capaz de causar dor na mucosa (ex.: pênfigo, penfigoide, líquen plano, EAR, Behçet, Sjögren).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.4",
+      "nome": "Dor na mucosa oral atribuída à hipersensibilidade ou reação alérgica",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Reação de hipersensibilidade/alérgica na mucosa oral; relação temporal com o agente.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_1_1_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.1.5",
+      "nome": "Dor na mucosa oral atribuída à inflamação da mucosa oral devido à outra causa",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Distúrbio capaz de causar inflamação da mucosa, diferente de 1.2.1.1.1 a 1.2.1.1.4 (ex.: deficiência nutricional, endócrino, hematológico).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_1_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Trauma ou dano",
+          "proximo": "r_1_2_1_1_1"
+        },
+        {
+          "rotulo": "Infecção",
+          "proximo": "r_1_2_1_1_2"
+        },
+        {
+          "rotulo": "Autoimunidade",
+          "proximo": "r_1_2_1_1_3"
+        },
+        {
+          "rotulo": "Hipersensibilidade/alergia",
+          "proximo": "r_1_2_1_1_4"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_1_2_1_1_5"
+        }
+      ]
+    },
+    "r_1_2_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.1.2",
+      "nome": "Dor na mucosa oral atribuída à lesão maligna",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Neoplasia da mucosa oral diagnosticada (ex.: carcinoma espinocelular); causalidade plausível.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_1": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Inflamação da mucosa",
+          "proximo": "r_1_2_1_1"
+        },
+        {
+          "rotulo": "Lesão maligna",
+          "proximo": "r_1_2_1_2"
+        }
+      ]
+    },
+    "r_1_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.1",
+      "nome": "Dor nas glândulas salivares atribuída à causa obstrutiva",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Obstrução do ducto salivar diagnosticada (ex.: sialolitíase, tampão de muco); dor em relação temporal com a obstrução.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.2",
+      "nome": "Dor nas glândulas salivares atribuída à infecção",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Infecção da(s) glândula(s) salivar(es) diagnosticada; dor em relação temporal com a infecção."
+      ],
+      "refinar": "qr_1_2_2_2"
+    },
+    "r_1_2_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.2.1",
+      "nome": "Dor nas glândulas salivares atribuída à infecção bacteriana",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é bacteriana (ex.: sialadenite bacteriana).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.2.2",
+      "nome": "Dor nas glândulas salivares atribuída à infecção viral",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é viral (ex.: caxumba, CMV, HIV).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_2_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Bacteriana",
+          "proximo": "r_1_2_2_2_1"
+        },
+        {
+          "rotulo": "Viral",
+          "proximo": "r_1_2_2_2_2"
+        }
+      ]
+    },
+    "r_1_2_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.3",
+      "nome": "Dor nas glândulas salivares atribuída à parotidite juvenil recorrente",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Parotidite juvenil recorrente diagnosticada; dor surgiu/recidivou junto aos episódios.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_2_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.4",
+      "nome": "Dor nas glândulas salivares atribuída ao distúrbio imunologicamente mediado",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Distúrbio imunomediado capaz de causar dor salivar (ex.: síndrome de Sjögren) diagnosticado.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_2_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.2.5",
+      "nome": "Dor nas glândulas salivares atribuída à outra causa",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Lesão/distúrbio capaz de causar dor salivar, diferente de 1.2.2.1 a 1.2.2.4 (ex.: GVHD).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Causa obstrutiva",
+          "proximo": "r_1_2_2_1"
+        },
+        {
+          "rotulo": "Infecção",
+          "proximo": "r_1_2_2_2"
+        },
+        {
+          "rotulo": "Parotidite juvenil recorrente",
+          "proximo": "r_1_2_2_3"
+        },
+        {
+          "rotulo": "Distúrbio imunomediado",
+          "proximo": "r_1_2_2_4"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_1_2_2_5"
+        }
+      ]
+    },
+    "r_1_2_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.1",
+      "nome": "Dor óssea mandibular atribuída ao trauma ou lesão",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Trauma/lesão envolvendo o osso (ex.: fratura) ocorreu; dor em relação temporal.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.2",
+      "nome": "Dor óssea mandibular atribuída à infecção",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Infecção do tecido ósseo diagnosticada; dor em relação temporal com a infecção."
+      ],
+      "refinar": "qr_1_2_3_2"
+    },
+    "r_1_2_3_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.2.1",
+      "nome": "Dor óssea mandibular atribuída à infecção bacteriana",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é bacteriana (ex.: osteomielite).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.2.2",
+      "nome": "Dor óssea mandibular atribuída à infecção viral",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é viral (ex.: herpes-zóster).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.2.3",
+      "nome": "Dor óssea mandibular atribuída à infecção fúngica",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "A infecção é fúngica (ex.: aspergilose, mucormicose).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_3_2": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Bacteriana",
+          "proximo": "r_1_2_3_2_1"
+        },
+        {
+          "rotulo": "Viral",
+          "proximo": "r_1_2_3_2_2"
+        },
+        {
+          "rotulo": "Fúngica",
+          "proximo": "r_1_2_3_2_3"
+        }
+      ]
+    },
+    "r_1_2_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.3",
+      "nome": "Dor óssea mandibular atribuída à lesão benigna local",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Lesão benigna local capaz de causar dor óssea diagnosticada (ex.: tumor de células gigantes, osteoma osteoide, osteoblastoma).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.4",
+      "nome": "Dor óssea mandibular atribuída à lesão maligna",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Lesão maligna primária ou secundária capaz de causar dor óssea diagnosticada; dor em relação temporal."
+      ],
+      "refinar": "qr_1_2_3_4"
+    },
+    "r_1_2_3_4_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.4.1",
+      "nome": "Dor óssea mandibular atribuída à malignidade local",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Lesão maligna primária (ex.: osteossarcoma, histiocitose de células de Langerhans, linfoma não-Hodgkin, mieloma múltiplo).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_4_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.4.2",
+      "nome": "Dor óssea mandibular atribuída à malignidade remota",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Malignidade remota com efeito de massa/compressão ou efeito paraneoplásico.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_3_4": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Malignidade local",
+          "proximo": "r_1_2_3_4_1"
+        },
+        {
+          "rotulo": "Malignidade remota",
+          "proximo": "r_1_2_3_4_2"
+        }
+      ]
+    },
+    "r_1_2_3_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.5",
+      "nome": "Dor óssea mandibular atribuída à terapia",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Intervenção terapêutica resultou em lesão capaz de causar dor óssea (ex.: osteonecrose por medicação/MRONJ, osteorradionecrose, alveolite).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_1_2_3_6": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "1.2.3.6",
+      "nome": "Dor óssea mandibular atribuída à doença sistêmica",
+      "categoria": "1. Mucosa oral, glândula salivar e osso",
+      "criterios": [
+        "Doença sistêmica capaz de causar dor óssea diagnosticada (ex.: doença falciforme, Gaucher, Paget).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_1_2_3": {
+      "tipo": "pergunta",
+      "ramo": "1. Mucosa oral, glândula salivar e osso",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Trauma ou lesão",
+          "proximo": "r_1_2_3_1"
+        },
+        {
+          "rotulo": "Infecção",
+          "proximo": "r_1_2_3_2"
+        },
+        {
+          "rotulo": "Lesão benigna local",
+          "proximo": "r_1_2_3_3"
+        },
+        {
+          "rotulo": "Lesão maligna",
+          "proximo": "r_1_2_3_4"
+        },
+        {
+          "rotulo": "Terapia",
+          "proximo": "r_1_2_3_5"
+        },
+        {
+          "rotulo": "Doença sistêmica",
+          "proximo": "r_1_2_3_6"
+        }
+      ]
+    },
+    "r_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.1",
+      "nome": "Dor miofascial orofacial primária aguda",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Preenche os critérios de 2.1 Dor miofascial orofacial primária.",
+        "Início nos últimos 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2",
+      "nome": "Dor miofascial orofacial primária crônica",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Preenche 2.1; início > 3 meses; recorrente em ≥10 episódios ou contínua."
+      ],
+      "refinar": "qr_2_1_2"
+    },
+    "r_2_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.1",
+      "nome": "Dor miofascial orofacial primária crônica infrequente",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Ocorrendo em < 1 dia/mês.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.2",
+      "nome": "Dor miofascial orofacial primária crônica frequente",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Ocorrendo em 1–14 dias/mês, em média, por > 3 meses."
+      ],
+      "refinar": "qr_2_1_2_2"
+    },
+    "r_2_1_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.2.1",
+      "nome": "Dor miofascial orofacial primária crônica frequente sem dor referida",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Dor à palpação localizada apenas no músculo/área palpado (sem dor referida além do limite).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_1_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.2.2",
+      "nome": "Dor miofascial orofacial primária crônica frequente com dor referida",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Relato de dor além do limite do músculo/área palpado (dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_2_1_2_2": {
+      "tipo": "pergunta",
+      "ramo": "2. Dor miofascial orofacial",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem dor referida",
+          "proximo": "r_2_1_2_2_1"
+        },
+        {
+          "rotulo": "Com dor referida",
+          "proximo": "r_2_1_2_2_2"
+        }
+      ]
+    },
+    "r_2_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.3",
+      "nome": "Dor miofascial orofacial primária crônica altamente frequente",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Ocorrendo em > 15 dias/mês, em média, por > 3 meses."
+      ],
+      "refinar": "qr_2_1_2_3"
+    },
+    "r_2_1_2_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.3.1",
+      "nome": "Dor miofascial orofacial primária crônica altamente frequente sem dor referida",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Dor à palpação localizada apenas no músculo/área palpado (sem dor referida além do limite).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_1_2_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.1.2.3.2",
+      "nome": "Dor miofascial orofacial primária crônica altamente frequente com dor referida",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Relato de dor além do limite do músculo/área palpado (dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_2_1_2_3": {
+      "tipo": "pergunta",
+      "ramo": "2. Dor miofascial orofacial",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem dor referida",
+          "proximo": "r_2_1_2_3_1"
+        },
+        {
+          "rotulo": "Com dor referida",
+          "proximo": "r_2_1_2_3_2"
+        }
+      ]
+    },
+    "qr_2_1_2": {
+      "tipo": "pergunta",
+      "ramo": "2. Dor miofascial orofacial",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Infrequente",
+          "proximo": "r_2_1_2_1"
+        },
+        {
+          "rotulo": "Frequente",
+          "proximo": "r_2_1_2_2"
+        },
+        {
+          "rotulo": "Altamente frequente",
+          "proximo": "r_2_1_2_3"
+        }
+      ]
+    },
+    "qr_2_1": {
+      "tipo": "pergunta",
+      "ramo": "2. Dor miofascial orofacial",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Aguda",
+          "proximo": "r_2_1_1"
+        },
+        {
+          "rotulo": "Crônica",
+          "proximo": "r_2_1_2"
+        }
+      ]
+    },
+    "r_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.2.1",
+      "nome": "Dor miofascial orofacial atribuída à tendinite",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Tendinite de um ou mais músculos mastigatórios diagnosticada.",
+        "Evidência de causalidade (≥2): relação temporal, piora ou melhora paralelas.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.2.2",
+      "nome": "Dor miofascial orofacial atribuída à miosite",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Miosite diagnosticada (edema, eritema e/ou aumento de temperatura no músculo).",
+        "Evidência de causalidade (≥2): relação temporal, piora ou melhora paralelas.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_2_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "2.2.3",
+      "nome": "Dor miofascial orofacial atribuída ao espasmo muscular",
+      "categoria": "2. Dor miofascial orofacial",
+      "criterios": [
+        "Espasmo muscular diagnosticado (contração tônica súbita; amplitude de movimento limitada).",
+        "Evidência de causalidade (≥2): relação temporal imediata, piora ou melhora paralelas.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_2_2": {
+      "tipo": "pergunta",
+      "ramo": "2. Dor miofascial orofacial",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Tendinite",
+          "proximo": "r_2_2_1"
+        },
+        {
+          "rotulo": "Miosite",
+          "proximo": "r_2_2_2"
+        },
+        {
+          "rotulo": "Espasmo muscular",
+          "proximo": "r_2_2_3"
+        }
+      ]
+    },
+    "r_3_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.1",
+      "nome": "Dor primária aguda na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Preenche 3.1 Dor primária na ATM.",
+        "Início nos últimos 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2",
+      "nome": "Dor primária crônica na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Preenche 3.1; início > 3 meses; recorrente em ≥10 episódios ou contínua."
+      ],
+      "refinar": "qr_3_1_2"
+    },
+    "r_3_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.1",
+      "nome": "Dor primária crônica infrequente na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Ocorrendo em < 1 dia/mês.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.2",
+      "nome": "Dor primária crônica frequente na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Ocorrendo em 1–14 dias/mês, em média, por > 3 meses."
+      ],
+      "refinar": "qr_3_1_2_2"
+    },
+    "r_3_1_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.2.1",
+      "nome": "Dor primária crônica frequente sem dor referida na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor à palpação localizada no local imediato da palpação (sem dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_1_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.2.2",
+      "nome": "Dor primária crônica frequente com dor referida na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor à palpação da ATM além da área da articulação (dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_1_2_2": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem dor referida",
+          "proximo": "r_3_1_2_2_1"
+        },
+        {
+          "rotulo": "Com dor referida",
+          "proximo": "r_3_1_2_2_2"
+        }
+      ]
+    },
+    "r_3_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.3",
+      "nome": "Dor primária crônica altamente frequente na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Ocorrendo em > 15 dias/mês, em média, por > 3 meses."
+      ],
+      "refinar": "qr_3_1_2_3"
+    },
+    "r_3_1_2_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.3.1",
+      "nome": "Dor primária crônica altamente frequente sem dor referida na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor à palpação localizada no local imediato da palpação (sem dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_1_2_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.1.2.3.2",
+      "nome": "Dor primária crônica altamente frequente com dor referida na articulação temporomandibular",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Dor à palpação da ATM além da área da articulação (dor referida).",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_1_2_3": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem dor referida",
+          "proximo": "r_3_1_2_3_1"
+        },
+        {
+          "rotulo": "Com dor referida",
+          "proximo": "r_3_1_2_3_2"
+        }
+      ]
+    },
+    "qr_3_1_2": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Infrequente",
+          "proximo": "r_3_1_2_1"
+        },
+        {
+          "rotulo": "Frequente",
+          "proximo": "r_3_1_2_2"
+        },
+        {
+          "rotulo": "Altamente frequente",
+          "proximo": "r_3_1_2_3"
+        }
+      ]
+    },
+    "qr_3_1": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Aguda",
+          "proximo": "r_3_1_1"
+        },
+        {
+          "rotulo": "Crônica",
+          "proximo": "r_3_1_2"
+        }
+      ]
+    },
+    "r_3_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.1",
+      "nome": "Dor na articulação temporomandibular atribuída à artrite",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Artrite da ATM diagnosticada; evidência de causalidade (relação temporal e/ou paralelismo)."
+      ],
+      "refinar": "qr_3_2_1"
+    },
+    "r_3_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.1.1",
+      "nome": "Dor na articulação temporomandibular atribuída à artrite não sistêmica",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Sem evidência de doença reumatológica, ou evidência sem associação com a dor na ATM.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_2_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.1.2",
+      "nome": "Dor na articulação temporomandibular atribuída à artrite sistêmica",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Doença inflamatória articular sistêmica presente, com relação temporal/paralelismo com a dor.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_2_1": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Não sistêmica",
+          "proximo": "r_3_2_1_1"
+        },
+        {
+          "rotulo": "Sistêmica",
+          "proximo": "r_3_2_1_2"
+        }
+      ]
+    },
+    "r_3_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.2",
+      "nome": "Dor na articulação temporomandibular atribuída ao deslocamento de disco",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Deslocamento de disco da ATM diagnosticado; evidência de causalidade."
+      ],
+      "refinar": "qr_3_2_2"
+    },
+    "r_3_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.2.1",
+      "nome": "Dor na articulação temporomandibular atribuída ao deslocamento de disco com redução",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Deslocamento com redução (ruído/clique na abertura-fechamento)."
+      ],
+      "refinar": "qr_3_2_2_1"
+    },
+    "r_3_2_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.2.1.1",
+      "nome": "Dor na articulação temporomandibular atribuída ao deslocamento de disco com redução, com travamento intermitente",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Travamento intermitente com abertura limitada e posterior destravamento, nos últimos 30 dias.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_2_2_1": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Com travamento intermitente",
+          "proximo": "r_3_2_2_1_1"
+        }
+      ]
+    },
+    "r_3_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.2.2",
+      "nome": "Dor na articulação temporomandibular atribuída ao deslocamento de disco sem redução",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Mandíbula travada com limitação de abertura que interfere na alimentação.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_2_2": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Com redução",
+          "proximo": "r_3_2_2_1"
+        },
+        {
+          "rotulo": "Sem redução",
+          "proximo": "r_3_2_2_2"
+        }
+      ]
+    },
+    "r_3_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.3",
+      "nome": "Dor na articulação temporomandibular atribuída à doença articular degenerativa",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Doença degenerativa da ATM diagnosticada (crepitação à palpação); evidência de causalidade.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "r_3_2_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "3.2.4",
+      "nome": "Dor na articulação temporomandibular atribuída à subluxação",
+      "categoria": "3. Dor na articulação temporomandibular (ATM)",
+      "criterios": [
+        "Subluxação da ATM diagnosticada (travamento em abertura, necessidade de manobra para fechar); evidência de causalidade.",
+        "Não melhor explicada por outro diagnóstico da ICOP."
+      ]
+    },
+    "qr_3_2": {
+      "tipo": "pergunta",
+      "ramo": "3. Dor na articulação temporomandibular (ATM)",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Artrite",
+          "proximo": "r_3_2_1"
+        },
+        {
+          "rotulo": "Deslocamento de disco",
+          "proximo": "r_3_2_2"
+        },
+        {
+          "rotulo": "Doença articular degenerativa",
+          "proximo": "r_3_2_3"
+        },
+        {
+          "rotulo": "Subluxação",
+          "proximo": "r_3_2_4"
+        }
+      ]
+    },
+    "r_4_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.1",
+      "nome": "Neuralgia do trigêmeo clássica",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Compressão neurovascular (não apenas contato) com alterações morfológicas na raiz do trigêmeo (RM ou cirurgia)."
+      ],
+      "refinar": "qr_4_1_1_1"
+    },
+    "r_4_1_1_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.1.1",
+      "nome": "Neuralgia do trigêmeo clássica puramente paroxística",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Ausência de dor entre as crises na distribuição afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.1.2",
+      "nome": "Neuralgia do trigêmeo clássica com dor contínua concomitante",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor contínua ou quase contínua entre as crises, na distribuição ipsilateral.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_1_1": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Puramente paroxística",
+          "proximo": "r_4_1_1_1_1"
+        },
+        {
+          "rotulo": "Com dor contínua concomitante",
+          "proximo": "r_4_1_1_1_2"
+        }
+      ]
+    },
+    "r_4_1_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.2",
+      "nome": "Neuralgia do trigêmeo secundária",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Doença subjacente capaz de causar e explicar a neuralgia demonstrada."
+      ],
+      "refinar": "qr_4_1_1_2"
+    },
+    "r_4_1_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.2.1",
+      "nome": "Neuralgia do trigêmeo atribuída à esclerose múltipla",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "EM diagnosticada + placa na zona de entrada da raiz/ponte (RM ou eletrofisiologia).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.2.2",
+      "nome": "Neuralgia do trigêmeo por lesão expansiva",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Lesão expansiva em contato com a região do trigêmeo afetada (imagem); dor após a lesão.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.2.3",
+      "nome": "Neuralgia do trigêmeo atribuída à outra causa",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Outra doença capaz de causar neuralgia (ex.: deformidade da base do crânio, malformação AV).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_1_2": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Esclerose múltipla",
+          "proximo": "r_4_1_1_2_1"
+        },
+        {
+          "rotulo": "Lesão expansiva",
+          "proximo": "r_4_1_1_2_2"
+        },
+        {
+          "rotulo": "Outra causa",
+          "proximo": "r_4_1_1_2_3"
+        }
+      ]
+    },
+    "r_4_1_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.3",
+      "nome": "Neuralgia do trigêmeo idiopática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "4.1.1.1 e 4.1.1.2 não confirmadas por investigações adequadas (RM/eletrofisiologia)."
+      ],
+      "refinar": "qr_4_1_1_3"
+    },
+    "r_4_1_1_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.3.1",
+      "nome": "Neuralgia do trigêmeo idiopática, puramente paroxística",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Ausência de dor entre as crises na distribuição afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_1_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.1.3.2",
+      "nome": "Neuralgia do trigêmeo idiopática com dor contínua concomitante",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor contínua ou quase contínua entre as crises, na distribuição afetada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_1_3": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Puramente paroxística",
+          "proximo": "r_4_1_1_3_1"
+        },
+        {
+          "rotulo": "Com dor contínua concomitante",
+          "proximo": "r_4_1_1_3_2"
+        }
+      ]
+    },
+    "qr_4_1_1": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Clássica",
+          "proximo": "r_4_1_1_1"
+        },
+        {
+          "rotulo": "Secundária",
+          "proximo": "r_4_1_1_2"
+        },
+        {
+          "rotulo": "Idiopática",
+          "proximo": "r_4_1_1_3"
+        }
+      ]
+    },
+    "r_4_1_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.1",
+      "nome": "Dor neuropática do trigêmeo atribuída ao herpes zoster",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor facial unilateral < 3 meses na distribuição do trigêmeo; erupção herpética na mesma região (ou VZV confirmado).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.2",
+      "nome": "Neuralgia pós-herpética do trigêmeo",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Dor unilateral persistente/recorrente > 3 meses; herpes zoster afetou o mesmo ramo; relação temporal.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_1_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.3",
+      "nome": "Dor neuropática trigeminal pós-traumática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "História de lesão do nervo trigêmeo + confirmação por teste; início ≤6 meses; sinais/sintomas somatossensoriais na mesma distribuição."
+      ],
+      "refinar": "qr_4_1_2_3"
+    },
+    "r_4_1_2_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.3.1",
+      "nome": "Provável dor neuropática trigeminal pós-traumática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Preenche todos os critérios de 4.1.2.3, exceto a confirmação da lesão por teste diagnóstico.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_2_3": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Provável",
+          "proximo": "r_4_1_2_3_1"
+        }
+      ]
+    },
+    "r_4_1_2_4": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.4",
+      "nome": "Dor neuropática trigeminal atribuída a outro transtorno",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Doença (diferente de 4.1.2.1–4.1.2.3) capaz de causar a dor neuropática; sinais/sintomas somatossensoriais na mesma distribuição."
+      ],
+      "refinar": "qr_4_1_2_4"
+    },
+    "r_4_1_2_4_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.4.1",
+      "nome": "Provável dor neuropática trigeminal atribuída a outro transtorno",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Preenche todos os critérios de 4.1.2.4, exceto a relação temporal com a doença causal.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_2_4": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Provável",
+          "proximo": "r_4_1_2_4_1"
+        }
+      ]
+    },
+    "r_4_1_2_5": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.1.2.5",
+      "nome": "Dor neuropática trigeminal idiopática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Lesão do nervo trigêmeo sem história de trauma/distúrbio; sinais/sintomas somatossensoriais; etiologia desconhecida.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_1_2": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Herpes zoster",
+          "proximo": "r_4_1_2_1"
+        },
+        {
+          "rotulo": "Neuralgia pós-herpética",
+          "proximo": "r_4_1_2_2"
+        },
+        {
+          "rotulo": "Pós-traumática",
+          "proximo": "r_4_1_2_3"
+        },
+        {
+          "rotulo": "Atribuída a outro transtorno",
+          "proximo": "r_4_1_2_4"
+        },
+        {
+          "rotulo": "Idiopática",
+          "proximo": "r_4_1_2_5"
+        }
+      ]
+    },
+    "r_4_2_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.1.1",
+      "nome": "Neuralgia do glossofaríngeo clássica",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Compressão neurovascular da raiz do glossofaríngeo (RM ou cirurgia).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_2_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.1.2",
+      "nome": "Neuralgia do glossofaríngeo secundária",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Doença subjacente capaz de causar a neuralgia demonstrada (ex.: tumor, EM, trauma cervical).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_2_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.1.3",
+      "nome": "Neuralgia do glossofaríngeo idiopática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Sem compressão neurovascular nem doença subjacente identificada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_2_1": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Clássica",
+          "proximo": "r_4_2_1_1"
+        },
+        {
+          "rotulo": "Secundária",
+          "proximo": "r_4_2_1_2"
+        },
+        {
+          "rotulo": "Idiopática",
+          "proximo": "r_4_2_1_3"
+        }
+      ]
+    },
+    "r_4_2_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.2.1",
+      "nome": "Dor neuropática glossofaríngea atribuída à causa conhecida",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Distúrbio capaz de causar a dor diagnosticado; dor ipsilateral; surgiu após o início do distúrbio.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_4_2_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "4.2.2.2",
+      "nome": "Dor neuropática glossofaríngea idiopática",
+      "categoria": "4. Lesão ou doença dos nervos cranianos",
+      "criterios": [
+        "Nenhuma causa identificada.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_4_2_2": {
+      "tipo": "pergunta",
+      "ramo": "4. Lesão ou doença dos nervos cranianos",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Causa conhecida",
+          "proximo": "r_4_2_2_1"
+        },
+        {
+          "rotulo": "Idiopática",
+          "proximo": "r_4_2_2_2"
+        }
+      ]
+    },
+    "r_5_3_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.1.1",
+      "nome": "Crises de dor orofacial em salvas episódica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises em surtos de 7 dias a 1 ano, separados por remissões livres de dor ≥ 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.1.2",
+      "nome": "Crises de dor orofacial em salvas crônica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises por > 1 ano sem remissão, ou com remissões < 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_5_3_1": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Episódica",
+          "proximo": "r_5_3_1_1"
+        },
+        {
+          "rotulo": "Crônica",
+          "proximo": "r_5_3_1_2"
+        }
+      ]
+    },
+    "r_5_3_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.2.1",
+      "nome": "Dor paroxística hemifacial episódica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises em surtos de 7 dias a 1 ano, separados por remissões livres de dor ≥ 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.2.2",
+      "nome": "Dor paroxística hemifacial crônica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises por > 1 ano sem remissão, ou com remissões < 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_5_3_2": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Episódica",
+          "proximo": "r_5_3_2_1"
+        },
+        {
+          "rotulo": "Crônica",
+          "proximo": "r_5_3_2_2"
+        }
+      ]
+    },
+    "r_5_3_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.3.1",
+      "nome": "SUNFA episódica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises em surtos de 7 dias a 1 ano, separados por remissões livres de dor ≥ 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_3_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.3.3.2",
+      "nome": "SUNFA crônica",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises por > 1 ano sem remissão, ou com remissões < 3 meses.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_5_3_3": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Episódica",
+          "proximo": "r_5_3_3_1"
+        },
+        {
+          "rotulo": "Crônica",
+          "proximo": "r_5_3_3_2"
+        }
+      ]
+    },
+    "r_5_4_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.4.1",
+      "nome": "Dor orofacial neurovascular de curta duração",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises durando de 1–4 horas (não tratada ou tratada sem sucesso).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_5_4_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "5.4.2",
+      "nome": "Dor orofacial neurovascular de longa duração",
+      "categoria": "5. Semelhantes a cefaleias primárias",
+      "criterios": [
+        "Crises durando > 4 horas.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_5_4": {
+      "tipo": "pergunta",
+      "ramo": "5. Semelhantes a cefaleias primárias",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Curta duração",
+          "proximo": "r_5_4_1"
+        },
+        {
+          "rotulo": "Longa duração",
+          "proximo": "r_5_4_2"
+        }
+      ]
+    },
+    "r_6_1_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.1.1",
+      "nome": "Síndrome da ardência bucal sem alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Ausência de alterações nos testes somatossensoriais quantitativos e qualitativos.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_1_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.1.2",
+      "nome": "Síndrome da ardência bucal com alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Presença de alterações somatossensoriais (sinais/sintomas negativos e/ou positivos).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_1_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.1.3",
+      "nome": "Provável síndrome da ardência bucal",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Preenche os critérios, exceto a duração ≥ 3 meses (presente por < 3 meses).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_6_1": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem alterações somatossensoriais",
+          "proximo": "r_6_1_1"
+        },
+        {
+          "rotulo": "Com alterações somatossensoriais",
+          "proximo": "r_6_1_2"
+        },
+        {
+          "rotulo": "Provável (< 3 meses)",
+          "proximo": "r_6_1_3"
+        }
+      ]
+    },
+    "r_6_2_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.2.1",
+      "nome": "Dor facial idiopática persistente sem alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Ausência de alterações nos testes somatossensoriais quantitativos e qualitativos.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_2_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.2.2",
+      "nome": "Dor facial idiopática persistente com alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Presença de alterações somatossensoriais (sinais/sintomas negativos e/ou positivos).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_2_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.2.3",
+      "nome": "Provável dor facial idiopática persistente",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Preenche os critérios, exceto a duração ≥ 3 meses (presente por < 3 meses).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_6_2": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem alterações somatossensoriais",
+          "proximo": "r_6_2_1"
+        },
+        {
+          "rotulo": "Com alterações somatossensoriais",
+          "proximo": "r_6_2_2"
+        },
+        {
+          "rotulo": "Provável (< 3 meses)",
+          "proximo": "r_6_2_3"
+        }
+      ]
+    },
+    "r_6_3_1": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.3.1",
+      "nome": "Dor dentoalveolar idiopática persistente sem alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Ausência de alterações nos testes somatossensoriais quantitativos e qualitativos.",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_3_2": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.3.2",
+      "nome": "Dor dentoalveolar idiopática persistente com alterações somatossensoriais",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Presença de alterações somatossensoriais (sinais/sintomas negativos e/ou positivos).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "r_6_3_3": {
+      "tipo": "resultado",
+      "diagnostico": true,
+      "codigo": "6.3.3",
+      "nome": "Provável dor dentoalveolar idiopática persistente",
+      "categoria": "6. Dor orofacial idiopática",
+      "criterios": [
+        "Preenche os critérios, exceto a duração ≥ 3 meses (presente por < 3 meses).",
+        "Não melhor explicada por outro diagnóstico da ICOP ou da ICHD-3."
+      ]
+    },
+    "qr_6_3": {
+      "tipo": "pergunta",
+      "ramo": "6. Dor orofacial idiopática",
+      "texto": "Selecione o subtipo que melhor se aplica:",
+      "ajuda": "Refinamento opcional. Se nenhum se aplicar, use 'Voltar' para manter o diagnóstico do nível atual.",
+      "opcoes": [
+        {
+          "rotulo": "Sem alterações somatossensoriais",
+          "proximo": "r_6_3_1"
+        },
+        {
+          "rotulo": "Com alterações somatossensoriais",
+          "proximo": "r_6_3_2"
+        },
+        {
+          "rotulo": "Provável (< 3 meses)",
+          "proximo": "r_6_3_3"
+        }
       ]
     }
   }

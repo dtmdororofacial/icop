@@ -214,6 +214,16 @@ body {
 
 .btn--block { width: 100%; min-height: 52px; font-size: 1.05rem; }
 
+.btn--refine {
+  display: block;
+  width: 100%;
+  margin: 0 0 18px;
+  background: var(--c-accent-tint);
+  color: var(--c-accent-dark);
+  border-color: var(--c-accent-soft);
+}
+.btn--refine:hover { background: var(--c-accent-soft); border-color: var(--c-accent); }
+
 /* ---------- Opções (botões de resposta) ---------- */
 .options {
   display: flex;

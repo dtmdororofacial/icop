@@ -48,11 +48,16 @@
     el.btnVoltar    = byId('btn-voltar');
     el.btnReiniciar = byId('btn-reiniciar');
     el.btnCopiar    = byId('btn-copiar');
+    el.btnRefinar   = byId('btn-refinar');
 
     el.btnIniciar.addEventListener('click', start);
     el.btnVoltar.addEventListener('click', back);
     el.btnReiniciar.addEventListener('click', restart);
     el.btnCopiar.addEventListener('click', copyResult);
+    el.btnRefinar.addEventListener('click', function () {
+      var node = nodes[currentId];
+      if (node && node.refinar) forward(node.refinar);
+    });
 
     showIntro();
     loadTree();
@@ -221,6 +226,9 @@
       li.textContent = c;
       el.rcrit.appendChild(li);
     });
+
+    var temRefino = node.refinar && nodes[node.refinar];
+    el.btnRefinar.hidden = !temRefino;
 
     el.rcopied.hidden = true;
     el.btnCopiar.textContent = 'Copiar resultado';
